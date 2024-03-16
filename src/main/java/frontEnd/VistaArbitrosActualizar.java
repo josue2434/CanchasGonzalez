@@ -4,6 +4,9 @@
  */
 package frontEnd;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author josue
@@ -186,6 +189,27 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
         
          int disponible =  cmbDisponible.getSelectedIndex();
         System.out.println(disponible);
+        
+         int result = JOptionPane.showConfirmDialog(
+                new JFrame(),
+                "¿ESTAS SEGURO DE ACTUALIZAR ESTE REGISTRO?", 
+                "CANCHASGONZALEZ - CONFIRMACION",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+            );
+
+        if(result == JOptionPane.YES_OPTION){
+            System.out.println(1);
+            VistaArbitros vistaArbitros = new VistaArbitros();
+            vistaArbitros.setVisible(true);
+            dispose();
+           //label.setText("You selected: Yes");
+        }else if (result == JOptionPane.NO_OPTION){
+            System.out.println(2);
+           //label.setText("You selected: No");
+        }else {
+            System.out.println(3);
+        }
         
     }//GEN-LAST:event_btnActualizarArbitroActionPerformed
 

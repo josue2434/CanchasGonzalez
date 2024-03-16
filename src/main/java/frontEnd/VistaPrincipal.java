@@ -48,6 +48,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         btnArbitros.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnArbitros.setText("ARBITROS");
+        btnArbitros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArbitrosActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnArbitros);
         btnArbitros.setBounds(210, 320, 300, 100);
 
@@ -72,6 +77,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private void btnCanchasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCanchasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCanchasActionPerformed
+
+    private void btnArbitrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArbitrosActionPerformed
+        // TODO add your handling code here:
+        VistaArbitros vistaArbitro = new VistaArbitros();
+        vistaArbitro.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnArbitrosActionPerformed
 
     /**
      * @param args the command line arguments

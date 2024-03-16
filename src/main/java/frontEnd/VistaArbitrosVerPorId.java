@@ -3,19 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package frontEnd;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author josue
  */
-public class VistaArbitrosCrear extends javax.swing.JFrame {
+public class VistaArbitrosVerPorId extends javax.swing.JFrame {
 
     /**
      * Creates new form VistaPlantilla
      */
-    public VistaArbitrosCrear() {
+    public VistaArbitrosVerPorId() {
         initComponents();
     }
 
@@ -42,10 +40,9 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         txtfApellidoMaterno = new javax.swing.JTextField();
         lblLogoEmpresa = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
-        btnCrearArbitro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("CREAR ARBITRO");
+        setTitle("INFORMACION DE ARBITRO");
         setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
 
@@ -84,6 +81,7 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         getContentPane().add(lblTelefono2);
         lblTelefono2.setBounds(270, 490, 250, 40);
 
+        txtfTelefono.setEditable(false);
         txtfTelefono.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +91,7 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         getContentPane().add(txtfTelefono);
         txtfTelefono.setBounds(590, 410, 330, 40);
 
+        txtfIdArbitro1.setEditable(false);
         txtfIdArbitro1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfIdArbitro1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +101,7 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         getContentPane().add(txtfIdArbitro1);
         txtfIdArbitro1.setBounds(590, 140, 330, 40);
 
+        txtfNombres.setEditable(false);
         txtfNombres.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfNombres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,6 +111,7 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         getContentPane().add(txtfNombres);
         txtfNombres.setBounds(590, 200, 330, 40);
 
+        txtfApellidoPaterno.setEditable(false);
         txtfApellidoPaterno.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfApellidoPaterno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,6 +121,7 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         getContentPane().add(txtfApellidoPaterno);
         txtfApellidoPaterno.setBounds(590, 270, 330, 40);
 
+        txtfApellidoMaterno.setEditable(false);
         txtfApellidoMaterno.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfApellidoMaterno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,15 +140,7 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         getContentPane().add(lblTitulo);
         lblTitulo.setBounds(450, 0, 440, 80);
 
-        btnCrearArbitro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btnCrearArbitro.setText("CREAR ARBITRO");
-        btnCrearArbitro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCrearArbitroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnCrearArbitro);
-        btnCrearArbitro.setBounds(960, 600, 290, 70);
+        getAccessibleContext().setAccessibleName(" ARBITRO");
 
         pack();
         setLocationRelativeTo(null);
@@ -172,48 +166,6 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfApellidoMaternoActionPerformed
 
-    private void btnCrearArbitroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearArbitroActionPerformed
-        // TODO add your handling code here:
-        String nombre = txtfNombres.getText();
-        System.out.println(nombre);
-        
-        String apellidoPaterno = txtfApellidoPaterno.getText();
-        System.out.println(apellidoPaterno);
-        
-        String apellidoMaterno = txtfApellidoMaterno.getText();
-        System.out.println(apellidoMaterno);
-        
-         String telefono = txtfTelefono.getText();
-        System.out.println(telefono);
-        
-         int disponible =  cmbDisponible.getSelectedIndex();
-        System.out.println(disponible);
-        
-        
-        //CONFIRMACION DE CREAR
-        int result = JOptionPane.showConfirmDialog(
-                new JFrame(),
-                "¿ESTAS SEGURO DE CREARLO?", 
-                "CANCHASGONZALEZ - CONFIRMACION",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE
-            );
-
-        if(result == JOptionPane.YES_OPTION){
-            System.out.println(1);
-            VistaArbitros vistaArbitros = new VistaArbitros();
-            vistaArbitros.setVisible(true);
-            dispose();
-           //label.setText("You selected: Yes");
-        }else if (result == JOptionPane.NO_OPTION){
-            System.out.println(2);
-           //label.setText("You selected: No");
-        }else {
-            System.out.println(3);
-        }
-        
-    }//GEN-LAST:event_btnCrearArbitroActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -231,14 +183,18 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaArbitrosCrear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaArbitrosVerPorId.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaArbitrosCrear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaArbitrosVerPorId.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaArbitrosCrear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaArbitrosVerPorId.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaArbitrosCrear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaArbitrosVerPorId.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -247,13 +203,12 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaArbitrosCrear().setVisible(true);
+                new VistaArbitrosVerPorId().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCrearArbitro;
     private javax.swing.JComboBox<String> cmbDisponible;
     private javax.swing.JLabel lblApellidoMaterno1;
     private javax.swing.JLabel lblApellidoPaterno1;
