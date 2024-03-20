@@ -36,6 +36,7 @@ public class VistaArbitros extends javax.swing.JFrame {
         btnCrear1 = new javax.swing.JButton();
         btnActualizar1 = new javax.swing.JButton();
         btnEliminar1 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1280, 720));
@@ -112,6 +113,16 @@ public class VistaArbitros extends javax.swing.JFrame {
         getContentPane().add(btnEliminar1);
         btnEliminar1.setBounds(890, 470, 230, 40);
 
+        btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnRegresar.setText("REGRESAR");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegresar);
+        btnRegresar.setBounds(40, 630, 190, 70);
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -161,6 +172,13 @@ public class VistaArbitros extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        VistaPrincipal vistaPrincipal = new VistaPrincipal();
+        vistaPrincipal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -201,6 +219,7 @@ public class VistaArbitros extends javax.swing.JFrame {
     private javax.swing.JButton btnActualizar1;
     private javax.swing.JButton btnCrear1;
     private javax.swing.JButton btnEliminar1;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnVisualizar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitulo;

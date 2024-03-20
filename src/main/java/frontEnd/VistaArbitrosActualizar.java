@@ -44,6 +44,7 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
         lblLogoEmpresa = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         btnActualizarArbitro = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ACTUALIZAR ARBITRO");
@@ -149,6 +150,16 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
         getContentPane().add(btnActualizarArbitro);
         btnActualizarArbitro.setBounds(960, 600, 290, 70);
 
+        btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnRegresar.setText("REGRESAR");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegresar);
+        btnRegresar.setBounds(30, 630, 190, 70);
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -213,6 +224,14 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnActualizarArbitroActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        VistaArbitros vistaArbitros = new VistaArbitros();
+        vistaArbitros.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -257,6 +276,7 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizarArbitro;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cmbDisponible;
     private javax.swing.JLabel lblApellidoMaterno1;
     private javax.swing.JLabel lblApellidoPaterno1;
