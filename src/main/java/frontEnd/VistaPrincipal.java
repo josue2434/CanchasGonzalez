@@ -58,6 +58,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         btnEquipos.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnEquipos.setText("EQUIPOS");
+        btnEquipos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEquiposActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnEquipos);
         btnEquipos.setBounds(700, 60, 320, 110);
 
@@ -96,6 +101,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
         vistaJugadores.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnJugadoresActionPerformed
+
+    private void btnEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquiposActionPerformed
+        // TODO add your handling code here:
+        VistaEquipos vistaEquipos = new VistaEquipos();
+        vistaEquipos.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnEquiposActionPerformed
 
     /**
      * @param args the command line arguments
