@@ -14,6 +14,9 @@ public class Main {
        
         Arbitro arbitro1 = new Arbitro("Juan", "Perez", "Gomez", "333021212", 1);
         System.out.println(arbitro1);
+        
+        ArbitroDAO arbitroDAO = new ArbitroDAO();
+        arbitroDAO.agregarArbitro(arbitro1);
     
     }
 }

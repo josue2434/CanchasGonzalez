@@ -4,6 +4,7 @@
  */
 package frontEnd;
 import backEnd.Arbitro;
+import backEnd.ArbitroDAO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -216,6 +217,10 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
             System.out.println(1);
             Arbitro arbitro1 = new Arbitro(nombre, apellidoPaterno, apellidoMaterno, telefono, disponible);
             System.out.println(arbitro1);
+          
+            ArbitroDAO arbitroDAO = new ArbitroDAO();
+            arbitroDAO.agregarArbitro(arbitro1);
+    
             VistaArbitros vistaArbitros = new VistaArbitros();
             vistaArbitros.setVisible(true);
             dispose();
