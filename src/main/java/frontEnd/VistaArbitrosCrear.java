@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package frontEnd;
+import backEnd.Arbitro;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -201,6 +202,7 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         System.out.println(disponible);
         
         
+        
         //CONFIRMACION DE CREAR
         int result = JOptionPane.showConfirmDialog(
                 new JFrame(),
@@ -212,6 +214,8 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
 
         if(result == JOptionPane.YES_OPTION){
             System.out.println(1);
+            Arbitro arbitro1 = new Arbitro(nombre, apellidoPaterno, apellidoMaterno, telefono, disponible);
+            System.out.println(arbitro1);
             VistaArbitros vistaArbitros = new VistaArbitros();
             vistaArbitros.setVisible(true);
             dispose();

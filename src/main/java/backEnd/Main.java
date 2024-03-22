@@ -8,9 +8,12 @@ package backEnd;
  *
  * @author josue
  */
-public class CanchasGonzalez {
+public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+       
+        Arbitro arbitro1 = new Arbitro("Juan", "Perez", "Gomez", "333021212", 1);
+        System.out.println(arbitro1);
+    
     }
 }

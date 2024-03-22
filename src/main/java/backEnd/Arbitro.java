@@ -7,9 +7,13 @@ public class Arbitro {
   private String apellidoPaterno;
   private String apellidoMaterno;
   private String telefono;
-  private boolean disponible;
+  private int disponible;
+  
+  public Arbitro (){
+    
+  }
 
-  public Arbitro(String nombre, String apellidoPaterno, String apellidoMaterno, String telefono, boolean disponible) {
+  public Arbitro(String nombre, String apellidoPaterno, String apellidoMaterno, String telefono, int disponible) {
     this.nombre = nombre;
     this.apellidoPaterno = apellidoPaterno;
     this.apellidoMaterno = apellidoMaterno;
@@ -57,12 +61,18 @@ public class Arbitro {
     this.telefono = telefono;
   }
 
-  public boolean isDisponible() {
+  public int isDisponible() {
     return disponible;
   }
 
-  public void setDisponible(boolean disponible) {
+  public void setDisponible(int disponible) {
     this.disponible = disponible;
   }
+  
+  
+  public String toString() {
+    return "Arbitro: " + nombre + ", " + apellidoPaterno + ", " + apellidoMaterno + ", " + telefono + ", " + disponible;
+  }
 
+  
 }

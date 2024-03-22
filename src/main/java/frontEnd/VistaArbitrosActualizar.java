@@ -4,6 +4,7 @@
  */
 package frontEnd;
 
+import backEnd.Arbitro;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -211,6 +212,8 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
 
         if(result == JOptionPane.YES_OPTION){
             System.out.println(1);
+            Arbitro arbitro1 = new Arbitro(nombre, apellidoPaterno, apellidoMaterno, telefono, disponible);
+            System.out.println(arbitro1);
             VistaArbitros vistaArbitros = new VistaArbitros();
             vistaArbitros.setVisible(true);
             dispose();
