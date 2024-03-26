@@ -220,6 +220,8 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
           
             ArbitroDAO arbitroDAO = new ArbitroDAO();
             arbitroDAO.agregarArbitro(arbitro1);
+            
+            JOptionPane.showMessageDialog(null, "Se ha registrado el arbitro (" + nombre + ") exitosmente.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
     
             VistaArbitros vistaArbitros = new VistaArbitros();
             vistaArbitros.setVisible(true);

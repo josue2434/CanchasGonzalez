@@ -4,6 +4,9 @@
  */
 package frontEnd;
 
+import backEnd.Arbitro;
+import backEnd.ArbitroDAO;
+
 /**
  *
  * @author josue
@@ -16,6 +19,24 @@ public class VistaArbitrosVerPorId extends javax.swing.JFrame {
     public VistaArbitrosVerPorId() {
         initComponents();
     }
+    
+    public VistaArbitrosVerPorId(int idArbitro) {
+        initComponents();
+        
+        ArbitroDAO arbitroDAO = new ArbitroDAO();
+        Arbitro arbitro = arbitroDAO.obtenerArbitroPorId(idArbitro);
+        
+        txtfIdArbitro1.setText(String.valueOf(arbitro.getIdArbitro()));
+        txtfNombres.setText(arbitro.getNombre());
+        txtfApellidoPaterno.setText(arbitro.getApellidoPaterno());
+        txtfApellidoMaterno.setText(arbitro.getApellidoMaterno());
+        txtfTelefono.setText(arbitro.getTelefono());
+        cmbDisponible.setSelectedIndex(arbitro.isDisponible());
+        
+        
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

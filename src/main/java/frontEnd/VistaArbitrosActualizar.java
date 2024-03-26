@@ -5,6 +5,7 @@
 package frontEnd;
 
 import backEnd.Arbitro;
+import backEnd.ArbitroDAO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -19,6 +20,20 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
      */
     public VistaArbitrosActualizar() {
         initComponents();
+    }
+    
+    public VistaArbitrosActualizar(int idArbitro) {
+        initComponents();
+        
+        ArbitroDAO arbitroDAO = new ArbitroDAO();
+        Arbitro arbitro = arbitroDAO.obtenerArbitroPorId(idArbitro);
+        
+        txtfIdArbitro1.setText(String.valueOf(arbitro.getIdArbitro()));
+        txtfNombres.setText(arbitro.getNombre());
+        txtfApellidoPaterno.setText(arbitro.getApellidoPaterno());
+        txtfApellidoMaterno.setText(arbitro.getApellidoMaterno());
+        txtfTelefono.setText(arbitro.getTelefono());
+        cmbDisponible.setSelectedIndex(arbitro.isDisponible());
     }
 
     /**

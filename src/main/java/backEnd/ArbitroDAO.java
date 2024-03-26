@@ -44,7 +44,7 @@ public class ArbitroDAO {
              ResultSet resultSet = preparedStatement.executeQuery()) {
             while (resultSet.next()) {
                 Arbitro arbitro = new Arbitro();
-                arbitro.setIdArbitro(resultSet.getInt("idArbitro"));
+                arbitro.setIdArbitro(resultSet.getInt("id_arbitro"));
                 arbitro.setNombre(resultSet.getString("nombre"));
                 arbitro.setApellidoPaterno(resultSet.getString("apellido_paterno"));
                 arbitro.setApellidoMaterno(resultSet.getString("apellido_materno"));
@@ -59,14 +59,14 @@ public class ArbitroDAO {
     }
 
     public Arbitro obtenerArbitroPorId(int idArbitro) {
-        String query = "SELECT * FROM arbitros WHERE idArbitro = ?";
+        String query = "SELECT * FROM arbitros WHERE id_arbitro = ?";
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, idArbitro);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     Arbitro arbitro = new Arbitro();
-                    arbitro.setIdArbitro(resultSet.getInt("idArbitro"));
+                    arbitro.setIdArbitro(resultSet.getInt("id_arbitro"));
                     arbitro.setNombre(resultSet.getString("nombre"));
                     arbitro.setApellidoPaterno(resultSet.getString("apellido_paterno"));
                     arbitro.setApellidoMaterno(resultSet.getString("apellido_materno"));
@@ -82,7 +82,7 @@ public class ArbitroDAO {
     }
 
     public void actualizarArbitro(Arbitro arbitro) {
-        String query = "UPDATE arbitros SET nombre = ?, apellido_paterno = ?, apellido_materno = ?, telefono = ?, disponible = ? WHERE idArbitro = ?";
+        String query = "UPDATE arbitros SET nombre = ?, apellido_paterno = ?, apellido_materno = ?, telefono = ?, disponible = ? WHERE id_arbitro = ?";
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, arbitro.getNombre());
@@ -98,7 +98,7 @@ public class ArbitroDAO {
     }
 
     public void eliminarArbitro(int idArbitro) {
-        String query = "DELETE FROM arbitros WHERE idArbitro = ?";
+        String query = "DELETE FROM arbitros WHERE id_arbitro = ?";
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, idArbitro);

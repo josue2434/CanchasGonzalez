@@ -4,8 +4,13 @@
  */
 package frontEnd;
 
+import backEnd.Arbitro;
+import backEnd.ArbitroDAO;
+import java.sql.SQLException;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,6 +23,30 @@ public class VistaArbitros extends javax.swing.JFrame {
      */
     public VistaArbitros() {
         initComponents();
+        
+        
+        DefaultTableModel model = (DefaultTableModel) tblArbitros.getModel();
+
+
+        ArbitroDAO arbitroDAO = new ArbitroDAO();
+
+        // Obtener todos los productos
+        List<Arbitro> todosArbitros = arbitroDAO.obtenerArbitros();
+        System.out.println("Todos los Arbitros:");
+        for (Arbitro arbitro : todosArbitros) {
+
+            model.addRow(new Object[]{
+                arbitro.getIdArbitro(),
+                arbitro.getNombre(),
+                arbitro.getApellidoPaterno(),
+                arbitro.getApellidoMaterno(),
+                arbitro.getTelefono(),
+                (arbitro.isDisponible() != 0)
+            });
+        }
+
+    
+        
     }
 
     /**
@@ -47,13 +76,10 @@ public class VistaArbitros extends javax.swing.JFrame {
         getContentPane().add(lblTitulo);
         lblTitulo.setBounds(490, 10, 470, 60);
 
-        tblArbitros.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        tblArbitros.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tblArbitros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID ARBITRO", "NOMBRE", "APELLIDO PATERNO", "APELLIDO MATERNO", "TELEFONO", "DISPONIBLE"
@@ -62,12 +88,20 @@ public class VistaArbitros extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
-        tblArbitros.setEnabled(false);
+        tblArbitros.setColumnSelectionAllowed(true);
+        tblArbitros.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(tblArbitros);
 
         getContentPane().add(jScrollPane1);
@@ -135,17 +169,38 @@ public class VistaArbitros extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCrear1ActionPerformed
 
     private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
-        // TODO add your handling code here:
-         VistaArbitrosVerPorId vistaArbitrosVerPorId  = new VistaArbitrosVerPorId();
-        vistaArbitrosVerPorId.setVisible(true);
-        dispose();
+        int selectedRow = tblArbitros.getSelectedRow();
+
+        if(selectedRow != -1){
+            int idArbitro = (int) tblArbitros.getValueAt(selectedRow, 0);
+            System.out.println(idArbitro);
+
+            VistaArbitrosVerPorId vistaArbitrosVerPorId  = new VistaArbitrosVerPorId(idArbitro);
+            vistaArbitrosVerPorId.setVisible(true);
+            dispose();
+        }else{
+             JOptionPane.showMessageDialog(null, "Por favor selecciona un arbitro");
+        }
+        
+        
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
     private void btnActualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizar1ActionPerformed
-        // TODO add your handling code here:
-        VistaArbitrosActualizar vistaArbitrosActualizar  = new VistaArbitrosActualizar();
-        vistaArbitrosActualizar.setVisible(true);
-        dispose();
+        
+        int selectedRow = tblArbitros.getSelectedRow();
+
+        if(selectedRow != -1){
+            int idArbitro = (int) tblArbitros.getValueAt(selectedRow, 0);
+            System.out.println(idArbitro);
+
+            VistaArbitrosActualizar vistaArbitrosActualizar  = new VistaArbitrosActualizar(idArbitro);
+            vistaArbitrosActualizar.setVisible(true);
+            dispose();
+        }else{
+             JOptionPane.showMessageDialog(null, "Por favor selecciona un arbitro");
+        }
+        
+        
     }//GEN-LAST:event_btnActualizar1ActionPerformed
 
     private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
