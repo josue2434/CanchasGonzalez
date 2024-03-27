@@ -3,6 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package frontEnd;
+import backEnd.Arbitro;
+import backEnd.ArbitroDAO;
+import backEnd.Equipo;
+import backEnd.EquipoDAO;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -33,10 +40,8 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
         btnRegresar = new javax.swing.JButton();
         lblNombre = new javax.swing.JLabel();
         lbLTelefono = new javax.swing.JLabel();
-        lblIdEquipo = new javax.swing.JLabel();
         txtfNombre = new javax.swing.JTextField();
         txtfTelefono = new javax.swing.JTextField();
-        txtfIdEquipo = new javax.swing.JTextField();
         lblTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -78,11 +83,6 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
         getContentPane().add(lbLTelefono);
         lbLTelefono.setBounds(430, 450, 310, 40);
 
-        lblIdEquipo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        lblIdEquipo.setText("ID EQUIPO");
-        getContentPane().add(lblIdEquipo);
-        lblIdEquipo.setBounds(420, 140, 310, 60);
-
         txtfNombre.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         txtfNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,15 +101,6 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
         getContentPane().add(txtfTelefono);
         txtfTelefono.setBounds(340, 530, 400, 60);
 
-        txtfIdEquipo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        txtfIdEquipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtfIdEquipoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtfIdEquipo);
-        txtfIdEquipo.setBounds(340, 210, 400, 60);
-
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         lblTitulo.setText("EQUIPOS");
         getContentPane().add(lblTitulo);
@@ -120,20 +111,13 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearEquipoActionPerformed
-        // TODO add your handling code here:
-         int idEquipo = Integer.valueOf(txtfIdEquipo.getText());
-         System.out.println(idEquipo);
+        
          
         String nombre = txtfNombre.getText();
         System.out.println(nombre);
         
         String telefono = txtfTelefono.getText();
         System.out.println(telefono);
-        
-    
-         
-       
-        
         
         //CONFIRMACION DE CREAR
         int result = JOptionPane.showConfirmDialog(
@@ -146,9 +130,29 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
 
         if(result == JOptionPane.YES_OPTION){
             System.out.println(1);
-            VistaEquipos vistaEquipos = new VistaEquipos();
-            vistaEquipos.setVisible(true);
-            dispose();
+            
+            Equipo equipo1 = new Equipo(nombre, telefono);
+            System.out.println(equipo1);
+            
+            
+            EquipoDAO equipoDAO = new EquipoDAO();
+            try {
+                equipoDAO.insertarEquipo(equipo1);
+                
+                JOptionPane.showMessageDialog(null, "Se ha registrado el equipo (" + nombre + ") exitosmente.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+    
+                VistaEquipos vistaEquipos = new VistaEquipos();
+                vistaEquipos.setVisible(true);
+                dispose();
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(VistaEquiposCrear.class.getName()).log(Level.SEVERE, null, ex);
+                
+                JOptionPane.showMessageDialog(null, "No se pudo registrar el equipo (" + nombre + ") exitosmente.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+            
+            
            //label.setText("You selected: Yes");
         }else if (result == JOptionPane.NO_OPTION){
             System.out.println(2);
@@ -156,7 +160,6 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
         }else {
             System.out.println(3);
         }
-        
     }//GEN-LAST:event_btnCrearEquipoActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
@@ -174,10 +177,6 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
     private void txtfTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfTelefonoActionPerformed
-
-    private void txtfIdEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfIdEquipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtfIdEquipoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,11 +232,9 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
     private javax.swing.JButton btnCrearEquipo;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel lbLTelefono;
-    private javax.swing.JLabel lblIdEquipo;
     private javax.swing.JLabel lblLogoEmpresa;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTextField txtfIdEquipo;
     private javax.swing.JTextField txtfNombre;
     private javax.swing.JTextField txtfTelefono;
     // End of variables declaration//GEN-END:variables

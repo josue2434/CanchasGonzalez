@@ -4,8 +4,17 @@
  */
 package frontEnd;
 
+import backEnd.Arbitro;
+import backEnd.ArbitroDAO;
+import backEnd.Equipo;
+import backEnd.EquipoDAO;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,6 +27,32 @@ public class VistaEquipos extends javax.swing.JFrame {
      */
     public VistaEquipos() {
         initComponents();
+        
+        DefaultTableModel model = (DefaultTableModel) tblEquipos.getModel();
+
+
+        EquipoDAO equipoDAO = new EquipoDAO();
+
+        // Obtener todos los productos
+        List<Equipo> equipos;
+        try {
+            equipos = equipoDAO.obtenerEquipos();
+            
+            System.out.println("Todos los Equipos:");
+            for (Equipo equipo : equipos) {
+
+                model.addRow(new Object[]{
+                   equipo.getIdEquipo(),
+                   equipo.getNombre(),
+                   equipo.getTelefono()
+                });
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(VistaEquipos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }
 
     /**
@@ -47,7 +82,7 @@ public class VistaEquipos extends javax.swing.JFrame {
         getContentPane().add(lblTitulo);
         lblTitulo.setBounds(490, 10, 470, 60);
 
-        tblEquipos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        tblEquipos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tblEquipos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -64,7 +99,8 @@ public class VistaEquipos extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        tblEquipos.setEnabled(false);
+        tblEquipos.setColumnSelectionAllowed(true);
+        tblEquipos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(tblEquipos);
 
         getContentPane().add(jScrollPane1);
@@ -132,10 +168,21 @@ public class VistaEquipos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCrear1ActionPerformed
 
     private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
-        // TODO add your handling code here:
-         VistaEquiposVerPorId vistaEquiposVerPorId  = new VistaEquiposVerPorId();
-        vistaEquiposVerPorId.setVisible(true);
-        dispose();
+        
+        int selectedRow = tblEquipos.getSelectedRow();
+
+        if(selectedRow != -1){
+            int idArbitro = (int) tblEquipos.getValueAt(selectedRow, 0);
+            System.out.println(idArbitro);
+
+            VistaEquiposVerPorId vistaEquiposVerPorId  = new VistaEquiposVerPorId(idArbitro);
+            vistaEquiposVerPorId.setVisible(true);
+            dispose();
+        }else{
+             JOptionPane.showMessageDialog(null, "Por favor selecciona un equipo");
+        }
+        
+         
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
     private void btnActualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizar1ActionPerformed

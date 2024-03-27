@@ -3,6 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package frontEnd;
+import backEnd.Arbitro;
+import backEnd.ArbitroDAO;
+import backEnd.Equipo;
+import backEnd.EquipoDAO;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -18,6 +25,27 @@ public class VistaEquiposVerPorId extends javax.swing.JFrame {
     public VistaEquiposVerPorId() {
         initComponents();
     }
+    
+    public VistaEquiposVerPorId(int idEquipo) {
+        initComponents();
+        
+        EquipoDAO equipoDAO = new EquipoDAO();
+        try {
+            Equipo equipo = equipoDAO.obtenerEquipoPorId(idEquipo);
+            
+           
+            txtfNombre.setText(equipo.getNombre());
+            txtfTelefono.setText(equipo.getTelefono());
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(VistaEquiposVerPorId.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+       
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
