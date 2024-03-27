@@ -18,12 +18,25 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
     /**
      * Creates new form VistaPlantilla
      */
+    private int idArbitro;
+
+    public int getIdArbitro() {
+        return idArbitro;
+    }
+
+    public void setIdArbitro(int idArbitro) {
+        this.idArbitro = idArbitro;
+    }
+    
+    
     public VistaArbitrosActualizar() {
         initComponents();
     }
     
     public VistaArbitrosActualizar(int idArbitro) {
         initComponents();
+        
+        this.idArbitro = idArbitro;
         
         ArbitroDAO arbitroDAO = new ArbitroDAO();
         Arbitro arbitro = arbitroDAO.obtenerArbitroPorId(idArbitro);
@@ -111,6 +124,7 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
         getContentPane().add(txtfTelefono);
         txtfTelefono.setBounds(590, 410, 330, 40);
 
+        txtfIdArbitro1.setEditable(false);
         txtfIdArbitro1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfIdArbitro1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,9 +243,20 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
             System.out.println(1);
             Arbitro arbitro1 = new Arbitro(nombre, apellidoPaterno, apellidoMaterno, telefono, disponible);
             System.out.println(arbitro1);
-            VistaArbitros vistaArbitros = new VistaArbitros();
-            vistaArbitros.setVisible(true);
-            dispose();
+            ArbitroDAO arbitroDAO = new ArbitroDAO();
+            int idArbitro;
+            int id = arbitroDAO.actualizarArbitro(arbitro1, this.idArbitro);
+            if (id != 0){
+                JOptionPane.showMessageDialog(null, "Se ha actualizado el arbitro (" + nombre + ") exitosmente.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+                
+                VistaArbitros vistaArbitros = new VistaArbitros(); 
+                vistaArbitros.setVisible(true);
+                dispose();
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "No se pudo actualizar el arbitro (" + nombre + ") vuelve a intentar.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
            //label.setText("You selected: Yes");
         }else if (result == JOptionPane.NO_OPTION){
             System.out.println(2);

@@ -30,7 +30,6 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblIdArbitro1 = new javax.swing.JLabel();
         lblNombres1 = new javax.swing.JLabel();
         lblApellidoPaterno1 = new javax.swing.JLabel();
         lblApellidoMaterno1 = new javax.swing.JLabel();
@@ -38,7 +37,6 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         cmbDisponible = new javax.swing.JComboBox<>();
         lblTelefono2 = new javax.swing.JLabel();
         txtfTelefono = new javax.swing.JTextField();
-        txtfIdArbitro1 = new javax.swing.JTextField();
         txtfNombres = new javax.swing.JTextField();
         txtfApellidoPaterno = new javax.swing.JTextField();
         txtfApellidoMaterno = new javax.swing.JTextField();
@@ -51,11 +49,6 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         setTitle("CREAR ARBITRO");
         setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
-
-        lblIdArbitro1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        lblIdArbitro1.setText("ID ARBITRO");
-        getContentPane().add(lblIdArbitro1);
-        lblIdArbitro1.setBounds(270, 140, 190, 40);
 
         lblNombres1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblNombres1.setText("NOMBRES");
@@ -95,15 +88,6 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
         });
         getContentPane().add(txtfTelefono);
         txtfTelefono.setBounds(590, 410, 330, 40);
-
-        txtfIdArbitro1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txtfIdArbitro1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtfIdArbitro1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtfIdArbitro1);
-        txtfIdArbitro1.setBounds(590, 140, 330, 40);
 
         txtfNombres.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfNombres.addActionListener(new java.awt.event.ActionListener() {
@@ -168,10 +152,6 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
     private void txtfTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfTelefonoActionPerformed
-
-    private void txtfIdArbitro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfIdArbitro1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtfIdArbitro1ActionPerformed
 
     private void txtfNombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfNombresActionPerformed
         // TODO add your handling code here:
@@ -288,7 +268,6 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbDisponible;
     private javax.swing.JLabel lblApellidoMaterno1;
     private javax.swing.JLabel lblApellidoPaterno1;
-    private javax.swing.JLabel lblIdArbitro1;
     private javax.swing.JLabel lblLogoEmpresa;
     private javax.swing.JLabel lblNombres1;
     private javax.swing.JLabel lblTelefono1;
@@ -296,7 +275,6 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextField txtfApellidoMaterno;
     private javax.swing.JTextField txtfApellidoPaterno;
-    private javax.swing.JTextField txtfIdArbitro1;
     private javax.swing.JTextField txtfNombres;
     private javax.swing.JTextField txtfTelefono;
     // End of variables declaration//GEN-END:variables

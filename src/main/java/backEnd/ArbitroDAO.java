@@ -81,7 +81,7 @@ public class ArbitroDAO {
         return null;
     }
 
-    public void actualizarArbitro(Arbitro arbitro) {
+    public int actualizarArbitro(Arbitro arbitro, int idArbitro) {
         String query = "UPDATE arbitros SET nombre = ?, apellido_paterno = ?, apellido_materno = ?, telefono = ?, disponible = ? WHERE id_arbitro = ?";
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -90,21 +90,28 @@ public class ArbitroDAO {
             preparedStatement.setString(3, arbitro.getApellidoMaterno());
             preparedStatement.setString(4, arbitro.getTelefono());
             preparedStatement.setInt(5, arbitro.isDisponible());
-            preparedStatement.setInt(6, arbitro.getIdArbitro());
+            preparedStatement.setInt(6 , idArbitro);
             preparedStatement.executeUpdate();
+            return 1;
         } catch (SQLException e) {
             e.printStackTrace();
+            return 0;
         }
     }
 
-    public void eliminarArbitro(int idArbitro) {
+    public int eliminarArbitro(int idArbitro) {
         String query = "DELETE FROM arbitros WHERE id_arbitro = ?";
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, idArbitro);
             preparedStatement.executeUpdate();
+            
+            return 1;
+            
+            
         } catch (SQLException e) {
             e.printStackTrace();
+            return 0;
         }
     }
 }
