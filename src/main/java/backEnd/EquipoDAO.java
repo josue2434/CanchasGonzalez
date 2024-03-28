@@ -40,7 +40,7 @@ public class EquipoDAO {
              PreparedStatement statement = connection.prepareStatement("UPDATE equipos SET nombre = ?, telefono = ? WHERE id_equipo = ?")) {
             statement.setString(1, equipo.getNombre());
             statement.setString(2, equipo.getTelefono());
-            statement.setInt(3, equipo.getIdEquipo());
+            statement.setInt(3, idEquipo);
             statement.executeUpdate();
             return 1;
         }catch (SQLException e) {

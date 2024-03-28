@@ -3,6 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package frontEnd;
+import backEnd.Arbitro;
+import backEnd.ArbitroDAO;
+import backEnd.Equipo;
+import backEnd.EquipoDAO;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -12,11 +19,40 @@ import javax.swing.JOptionPane;
  */
 public class VistaEquiposActualizar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VistaPlantilla
-     */
+    //ATRIBUTOS
+    private int idEquipo;
+
+    public int getIdEquipo() {
+        return idEquipo;
+    }
+
+    public void setIdEquipo(int idEquipo) {
+        this.idEquipo = idEquipo;
+    }
+    
+    
     public VistaEquiposActualizar() {
         initComponents();
+    }
+    
+    
+     public VistaEquiposActualizar(int idEquipo) {
+        initComponents();
+        
+        this.idEquipo = idEquipo;
+        
+        EquipoDAO equipoDAO = new EquipoDAO();
+        try {
+            Equipo equipo = equipoDAO.obtenerEquipoPorId(idEquipo);
+            txtfIdEquipo.setText(String.valueOf(equipo.getIdEquipo()));
+            txtfNombre.setText(equipo.getNombre());
+            txtfTelefono.setText(equipo.getTelefono());
+        } catch (SQLException ex) {
+            Logger.getLogger(VistaEquiposActualizar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
     }
 
     /**
@@ -101,6 +137,7 @@ public class VistaEquiposActualizar extends javax.swing.JFrame {
         getContentPane().add(txtfTelefono);
         txtfTelefono.setBounds(340, 530, 400, 60);
 
+        txtfIdEquipo.setEditable(false);
         txtfIdEquipo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         txtfIdEquipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,10 +157,7 @@ public class VistaEquiposActualizar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnActualizarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarEquipoActionPerformed
-        // TODO add your handling code here:
-         int idEquipo = Integer.valueOf(txtfIdEquipo.getText());
-         System.out.println(idEquipo);
-         
+        
         String nombre = txtfNombre.getText();
         System.out.println(nombre);
         
@@ -131,14 +165,10 @@ public class VistaEquiposActualizar extends javax.swing.JFrame {
         System.out.println(telefono);
         
     
-         
-       
-        
-        
         //CONFIRMACION DE CREAR
         int result = JOptionPane.showConfirmDialog(
                 new JFrame(),
-                "¿ESTAS SEGURO DE CREARLO?", 
+                "¿ESTAS SEGURO DE ACTUALIZARLO?", 
                 "CANCHASGONZALEZ - CONFIRMACION",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE
@@ -146,9 +176,36 @@ public class VistaEquiposActualizar extends javax.swing.JFrame {
 
         if(result == JOptionPane.YES_OPTION){
             System.out.println(1);
-            VistaEquipos vistaEquipos = new VistaEquipos();
-            vistaEquipos.setVisible(true);
-            dispose();
+            Equipo equipo1 = new Equipo(nombre, telefono);
+            System.out.println(equipo1);
+            
+            EquipoDAO equipoDAO = new EquipoDAO();
+            
+           
+            int id;
+            try {
+                id = equipoDAO.actualizarEquipo(equipo1, this.idEquipo);
+                
+                if (id != 0){
+                JOptionPane.showMessageDialog(null, "Se ha actualizado el equipo (" + nombre + ") exitosmente.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+                
+                VistaEquipos vistaEquipos = new VistaEquipos();
+                vistaEquipos.setVisible(true);
+                dispose();
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "No se pudo actualizar el equipo (" + nombre + ") vuelve a intentar.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(VistaEquiposActualizar.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "No se pudo actualizar el equipo (" + nombre + ") vuelve a intentar.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+            
+            
+            
+            
            //label.setText("You selected: Yes");
         }else if (result == JOptionPane.NO_OPTION){
             System.out.println(2);

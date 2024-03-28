@@ -186,14 +186,32 @@ public class VistaEquipos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
     private void btnActualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizar1ActionPerformed
-        // TODO add your handling code here:
-        VistaEquiposActualizar vistaEquiposActualizar  = new VistaEquiposActualizar();
-        vistaEquiposActualizar.setVisible(true);
-        dispose();
+        
+        int selectedRow = tblEquipos.getSelectedRow();
+
+        if(selectedRow != -1){
+            int idEquipo = (int) tblEquipos.getValueAt(selectedRow, 0);
+            System.out.println(idEquipo);
+
+            VistaEquiposActualizar vistaEquiposActualizar  = new VistaEquiposActualizar(idEquipo);
+            vistaEquiposActualizar.setVisible(true);
+            dispose();
+        }else{
+             JOptionPane.showMessageDialog(null, "Por favor selecciona un equipo");
+        }
+        
+        
     }//GEN-LAST:event_btnActualizar1ActionPerformed
 
     private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
-        //CONFIRMACION PARA ELIMINAR
+        int selectedRow = tblEquipos.getSelectedRow();
+
+        if(selectedRow != -1){
+            int idEquipo = (int) tblEquipos.getValueAt(selectedRow, 0);
+            System.out.println(idEquipo);
+            
+            //CONFIRMACION PARA ELIMINAR
+        
          int result = JOptionPane.showConfirmDialog(
                 new JFrame(),
                 "¿ESTAS SEGURO DE ELIMINAR ESTE REGISTRO?", 
@@ -202,17 +220,44 @@ public class VistaEquipos extends javax.swing.JFrame {
                 JOptionPane.QUESTION_MESSAGE
             );
 
-        if(result == JOptionPane.YES_OPTION){
-            System.out.println(1);
-            VistaEquipos vistaEquipos = new VistaEquipos();
-            vistaEquipos.setVisible(true);
-            dispose();
-           //label.setText("You selected: Yes");
-        }else if (result == JOptionPane.NO_OPTION){
-            System.out.println(2);
-           //label.setText("You selected: No");
-        }else {
-            System.out.println(3);
+            if(result == JOptionPane.YES_OPTION){
+                System.out.println(1);
+                
+                EquipoDAO equipoDAO = new EquipoDAO();
+                int id;
+                try {
+                    id = equipoDAO.eliminarEquipo(idEquipo);
+                    
+                    if (id != 0){
+                   JOptionPane.showMessageDialog(null, "Se ha eliminado el  equipo exitosamente.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+
+                    VistaEquipos vistaEquipos = new VistaEquipos();
+                    vistaEquipos.setVisible(true);
+                    dispose();
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null, "No se pudo eliminar el equipo, vuelve a intentar.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    
+                } catch (SQLException ex) {
+                    Logger.getLogger(VistaEquipos.class.getName()).log(Level.SEVERE, null, ex);
+                    JOptionPane.showMessageDialog(null, "No se pudo eliminar el equipo, vuelve a intentar.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+                }
+                
+                
+                
+
+                
+               //label.setText("You selected: Yes");
+            }else if (result == JOptionPane.NO_OPTION){
+                System.out.println(2);
+               //label.setText("You selected: No");
+            }else {
+                System.out.println(3);
+            }
+
+        }else{
+             JOptionPane.showMessageDialog(null, "Por favor selecciona un arbitro");
         }
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 
