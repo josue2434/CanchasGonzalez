@@ -7,11 +7,15 @@ import backEnd.Arbitro;
 import backEnd.ArbitroDAO;
 import backEnd.Equipo;
 import backEnd.EquipoDAO;
+import backEnd.Jugador;
+import backEnd.JugadorDAO;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -29,13 +33,37 @@ public class VistaEquiposVerPorId extends javax.swing.JFrame {
     public VistaEquiposVerPorId(int idEquipo) {
         initComponents();
         
-        EquipoDAO equipoDAO = new EquipoDAO();
+        EquipoDAO equipoDAO; 
+        JugadorDAO jugadorDAO; 
         try {
+            DefaultTableModel model = (DefaultTableModel) tblEquipo.getModel();
+            
+            equipoDAO = new EquipoDAO();
+            
             Equipo equipo = equipoDAO.obtenerEquipoPorId(idEquipo);
             
+            jugadorDAO  = new JugadorDAO();
+            
+            List <Jugador> jugadores = jugadorDAO.obtenerJugadoresPorIDEquipo(idEquipo);
            
             txtfNombre.setText(equipo.getNombre());
             txtfTelefono.setText(equipo.getTelefono());
+            
+            for(Jugador jugador : jugadores){
+                
+               model.addRow(new Object[]{
+                
+                   idEquipo,
+                   jugador.getIdJugador(),
+                   jugador.getNombre(),
+                   jugador.getApellidoPaterno(),
+                   jugador.getApellidoMaterno(),
+                   jugador.getNumeroCamiseta(),
+                   jugador.getPosicion(),
+                   jugador.getFechaNacimiento()
+            });
+                
+            }
             
             
         } catch (SQLException ex) {
@@ -64,7 +92,7 @@ public class VistaEquiposVerPorId extends javax.swing.JFrame {
         txtfTelefono = new javax.swing.JTextField();
         lblTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblArbitros = new javax.swing.JTable();
+        tblEquipo = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CREAR ARBITRO");
@@ -118,8 +146,8 @@ public class VistaEquiposVerPorId extends javax.swing.JFrame {
         getContentPane().add(lblTitulo);
         lblTitulo.setBounds(540, -10, 440, 80);
 
-        tblArbitros.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        tblArbitros.setModel(new javax.swing.table.DefaultTableModel(
+        tblEquipo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tblEquipo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -135,8 +163,8 @@ public class VistaEquiposVerPorId extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        tblArbitros.setEnabled(false);
-        jScrollPane1.setViewportView(tblArbitros);
+        tblEquipo.setEnabled(false);
+        jScrollPane1.setViewportView(tblEquipo);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(70, 210, 1170, 410);
@@ -234,7 +262,7 @@ public class VistaEquiposVerPorId extends javax.swing.JFrame {
     private javax.swing.JLabel lblLogoEmpresa;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTable tblArbitros;
+    private javax.swing.JTable tblEquipo;
     private javax.swing.JTextField txtfNombre;
     private javax.swing.JTextField txtfTelefono;
     // End of variables declaration//GEN-END:variables

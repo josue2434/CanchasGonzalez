@@ -141,4 +141,29 @@ public class JugadorDAO {
             return 0;
         }
     }
+    
+    public List<Jugador> obtenerJugadoresPorIDEquipo(int idEquipo) throws SQLException {
+    List<Jugador> jugadores = new ArrayList<>();
+    String query = "SELECT * FROM jugadores WHERE id_equipo = ?";
+    try (PreparedStatement statement = connection.prepareStatement(query)) {
+        statement.setInt(1, idEquipo);
+        try (ResultSet resultSet = statement.executeQuery()) {
+            while (resultSet.next()) {
+                Jugador jugador = new Jugador();
+                jugador.setIdJugador(resultSet.getInt("id_jugador"));
+                jugador.setIdEquipo(resultSet.getInt("id_equipo"));
+                jugador.setNombre(resultSet.getString("nombre"));
+                jugador.setApellidoPaterno(resultSet.getString("apellido_paterno"));
+                jugador.setApellidoMaterno(resultSet.getString("apellido_materno"));
+                jugador.setNumeroCamiseta(resultSet.getInt("numero_camiseta"));
+                jugador.setPosicion(resultSet.getString("posicion"));
+                jugador.setFechaNacimiento(resultSet.getString("fecha_nacimiento"));
+                jugadores.add(jugador);
+            }
+        }
+    }
+    return jugadores;
+}
+
+    
 }

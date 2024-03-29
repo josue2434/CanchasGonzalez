@@ -172,10 +172,10 @@ public class VistaEquipos extends javax.swing.JFrame {
         int selectedRow = tblEquipos.getSelectedRow();
 
         if(selectedRow != -1){
-            int idArbitro = (int) tblEquipos.getValueAt(selectedRow, 0);
-            System.out.println(idArbitro);
+            int idEquipo = (int) tblEquipos.getValueAt(selectedRow, 0);
+            System.out.println(idEquipo);
 
-            VistaEquiposVerPorId vistaEquiposVerPorId  = new VistaEquiposVerPorId(idArbitro);
+            VistaEquiposVerPorId vistaEquiposVerPorId  = new VistaEquiposVerPorId(idEquipo);
             vistaEquiposVerPorId.setVisible(true);
             dispose();
         }else{
