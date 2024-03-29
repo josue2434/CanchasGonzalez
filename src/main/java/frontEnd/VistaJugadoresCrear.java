@@ -3,6 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package frontEnd;
+import backEnd.Arbitro;
+import backEnd.ArbitroDAO;
+import backEnd.Equipo;
+import backEnd.EquipoDAO;
+import backEnd.Jugador;
+import backEnd.JugadorDAO;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -16,9 +28,38 @@ public class VistaJugadoresCrear extends javax.swing.JFrame {
      * Creates new form VistaPlantilla
      */
     public VistaJugadoresCrear() {
-        initComponents();
-    }
+       initComponents();
+        
+        try {
+            
+            EquipoDAO equipoDAO = new EquipoDAO();
+            List <Equipo> equipos = equipoDAO.obtenerEquipos();
+            
+            for (Equipo equipo : equipos) {
+                cmbIdEquipo.addItem(String.valueOf(equipo.getIdEquipo()));
+            }
+           
+            cmbIdEquipo.addItemListener(new ItemListener() {
+                @Override
+                public void itemStateChanged(ItemEvent e) {
+                    if (e.getStateChange() == ItemEvent.SELECTED) {
 
+                        try {
+                            String id = (String) cmbIdEquipo.getSelectedItem();
+                            System.out.println(id);
+                            Equipo equipo = equipoDAO.obtenerEquipoPorId(Integer.valueOf(id));
+                            txtfNombreEquipo.setText(equipo.getNombre());
+                        } catch (SQLException ex) {
+                            System.out.println("Error al cargar los datos de equipo");
+                        }
+                    }
+                }
+            });
+
+            }   catch (SQLException ex) {
+                    Logger.getLogger(VistaJugadoresCrear.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,9 +86,10 @@ public class VistaJugadoresCrear extends javax.swing.JFrame {
         txtfApellidoMaterno = new javax.swing.JTextField();
         txtfNumeroCamiseta = new javax.swing.JTextField();
         txtfPosicion = new javax.swing.JTextField();
-        txtfFechaNacimiento = new javax.swing.JTextField();
-        txtfIdEquipo = new javax.swing.JTextField();
+        txtfNombreEquipo = new javax.swing.JTextField();
         lblTitulo = new javax.swing.JLabel();
+        cmbIdEquipo = new javax.swing.JComboBox<>();
+        txtfFechaNacimiento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CREAR ARBITRO");
@@ -172,6 +214,25 @@ public class VistaJugadoresCrear extends javax.swing.JFrame {
         getContentPane().add(txtfPosicion);
         txtfPosicion.setBounds(600, 430, 330, 40);
 
+        txtfNombreEquipo.setEditable(false);
+        txtfNombreEquipo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtfNombreEquipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfNombreEquipoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtfNombreEquipo);
+        txtfNombreEquipo.setBounds(600, 550, 260, 40);
+
+        lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        lblTitulo.setText("JUGADORES");
+        getContentPane().add(lblTitulo);
+        lblTitulo.setBounds(450, 0, 440, 80);
+
+        cmbIdEquipo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(cmbIdEquipo);
+        cmbIdEquipo.setBounds(860, 550, 70, 40);
+
         txtfFechaNacimiento.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfFechaNacimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,26 +242,14 @@ public class VistaJugadoresCrear extends javax.swing.JFrame {
         getContentPane().add(txtfFechaNacimiento);
         txtfFechaNacimiento.setBounds(600, 490, 330, 40);
 
-        txtfIdEquipo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txtfIdEquipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtfIdEquipoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtfIdEquipo);
-        txtfIdEquipo.setBounds(600, 550, 330, 40);
-
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        lblTitulo.setText("JUGADORES");
-        getContentPane().add(lblTitulo);
-        lblTitulo.setBounds(450, 0, 440, 80);
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearJugadorActionPerformed
-        // TODO add your handling code here:
+        int idEquipo =  Integer.valueOf((String) cmbIdEquipo.getSelectedItem());
+        System.out.println(idEquipo);
+        
         String nombre = txtfNombres.getText();
         System.out.println(nombre);
         
@@ -219,10 +268,6 @@ public class VistaJugadoresCrear extends javax.swing.JFrame {
          String fechaNacimiento = txtfFechaNacimiento.getText();
          System.out.println(fechaNacimiento);
          
-        int idEquipo = Integer.valueOf(txtfIdEquipo.getText());
-         System.out.println(idEquipo);
-        
-        
         //CONFIRMACION DE CREAR
         int result = JOptionPane.showConfirmDialog(
                 new JFrame(),
@@ -234,13 +279,30 @@ public class VistaJugadoresCrear extends javax.swing.JFrame {
 
         if(result == JOptionPane.YES_OPTION){
             System.out.println(1);
-            VistaJugadores vistaJugadores = new VistaJugadores();
-            vistaJugadores.setVisible(true);
-            dispose();
-           //label.setText("You selected: Yes");
+            
+            Jugador jugador1 = new Jugador(idEquipo, nombre, apellidoPaterno, apellidoMaterno, numeroCamiseta, posicion, fechaNacimiento);
+            System.out.println(jugador1);
+          
+            JugadorDAO jugadorDAO;
+            try {
+                jugadorDAO = new JugadorDAO();
+                
+                jugadorDAO.insertarJugador(jugador1);
+            
+                JOptionPane.showMessageDialog(null, "Se ha registrado el jugador (" + nombre + ") exitosmente.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+
+                VistaJugadores vistaJugadores = new VistaJugadores();
+                vistaJugadores.setVisible(true);
+                dispose();
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(VistaJugadoresCrear.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+          
         }else if (result == JOptionPane.NO_OPTION){
             System.out.println(2);
-           //label.setText("You selected: No");
+           
         }else {
             System.out.println(3);
         }
@@ -279,13 +341,13 @@ public class VistaJugadoresCrear extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfPosicionActionPerformed
 
+    private void txtfNombreEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfNombreEquipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtfNombreEquipoActionPerformed
+
     private void txtfFechaNacimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfFechaNacimientoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfFechaNacimientoActionPerformed
-
-    private void txtfIdEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfIdEquipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtfIdEquipoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -332,6 +394,7 @@ public class VistaJugadoresCrear extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearJugador;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JComboBox<String> cmbIdEquipo;
     private javax.swing.JLabel lblApellidoMaterno1;
     private javax.swing.JLabel lblApellidoPaterno1;
     private javax.swing.JLabel lblFechaNacimiento;
@@ -346,7 +409,7 @@ public class VistaJugadoresCrear extends javax.swing.JFrame {
     private javax.swing.JTextField txtfApellidoPaterno;
     private javax.swing.JTextField txtfFechaNacimiento;
     private javax.swing.JTextField txtfIdArbitro1;
-    private javax.swing.JTextField txtfIdEquipo;
+    private javax.swing.JTextField txtfNombreEquipo;
     private javax.swing.JTextField txtfNombres;
     private javax.swing.JTextField txtfNumeroCamiseta;
     private javax.swing.JTextField txtfPosicion;

@@ -4,8 +4,17 @@
  */
 package frontEnd;
 
+import backEnd.Arbitro;
+import backEnd.ArbitroDAO;
+import backEnd.Jugador;
+import backEnd.JugadorDAO;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,6 +27,36 @@ public class VistaJugadores extends javax.swing.JFrame {
      */
     public VistaJugadores() {
         initComponents();
+        
+        DefaultTableModel model = (DefaultTableModel) tblJugadores.getModel();
+
+        try {
+            JugadorDAO jugadorDAO = new JugadorDAO();
+            
+            // Obtener todos los productos
+            List<Jugador> jugadores = jugadorDAO.obtenerJugadores();
+            System.out.println("Todos los Jugadores:");
+            for (Jugador jugador : jugadores) {
+
+                model.addRow(new Object[]{
+                    jugador.getIdJugador(),
+                    jugador.getNombre(),
+                    jugador.getApellidoPaterno(),
+                    jugador.getApellidoMaterno(),
+                    jugador.getNumeroCamiseta(),
+                    jugador.getPosicion(),
+                    jugador.getFechaNacimiento(),
+                    jugador.getIdEquipo()
+                });
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(VistaJugadores.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+
+        
+        
     }
 
     /**
@@ -31,7 +70,7 @@ public class VistaJugadores extends javax.swing.JFrame {
 
         lblTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblArbitros = new javax.swing.JTable();
+        tblJugadores = new javax.swing.JTable();
         btnVisualizar = new javax.swing.JButton();
         btnCrear1 = new javax.swing.JButton();
         btnActualizar1 = new javax.swing.JButton();
@@ -43,12 +82,13 @@ public class VistaJugadores extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("JUGADORES");
         getContentPane().add(lblTitulo);
-        lblTitulo.setBounds(490, 10, 470, 60);
+        lblTitulo.setBounds(20, 10, 1250, 60);
 
-        tblArbitros.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        tblArbitros.setModel(new javax.swing.table.DefaultTableModel(
+        tblJugadores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tblJugadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -64,11 +104,11 @@ public class VistaJugadores extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        tblArbitros.setEnabled(false);
-        jScrollPane1.setViewportView(tblArbitros);
+        tblJugadores.setEnabled(false);
+        jScrollPane1.setViewportView(tblJugadores);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(70, 110, 750, 410);
+        jScrollPane1.setBounds(30, 100, 980, 510);
 
         btnVisualizar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnVisualizar.setText("VISUALIZAR");
@@ -78,7 +118,7 @@ public class VistaJugadores extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnVisualizar);
-        btnVisualizar.setBounds(890, 320, 230, 40);
+        btnVisualizar.setBounds(1030, 260, 230, 40);
 
         btnCrear1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnCrear1.setText("CREAR");
@@ -88,7 +128,7 @@ public class VistaJugadores extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCrear1);
-        btnCrear1.setBounds(890, 230, 220, 40);
+        btnCrear1.setBounds(1030, 200, 230, 40);
 
         btnActualizar1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnActualizar1.setText("ACTUALIZAR");
@@ -98,7 +138,7 @@ public class VistaJugadores extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnActualizar1);
-        btnActualizar1.setBounds(890, 400, 230, 40);
+        btnActualizar1.setBounds(1030, 320, 230, 40);
 
         btnEliminar1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnEliminar1.setText("ELIMINAR");
@@ -108,7 +148,7 @@ public class VistaJugadores extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnEliminar1);
-        btnEliminar1.setBounds(890, 470, 230, 40);
+        btnEliminar1.setBounds(1030, 370, 230, 40);
 
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnRegresar.setText("REGRESAR");
@@ -222,6 +262,6 @@ public class VistaJugadores extends javax.swing.JFrame {
     private javax.swing.JButton btnVisualizar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTable tblArbitros;
+    private javax.swing.JTable tblJugadores;
     // End of variables declaration//GEN-END:variables
 }
