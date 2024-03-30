@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  *
  * @author josue
  */
-public class Main {
+public class PoblarDB {
 
     public static void main(String[] args) {
        
@@ -78,8 +78,9 @@ public class Main {
             
             
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PoblarDB.class.getName()).log(Level.SEVERE, null, ex);
         }
+       
     
     }
 }
