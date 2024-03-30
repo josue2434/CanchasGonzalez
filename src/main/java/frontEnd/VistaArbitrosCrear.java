@@ -5,6 +5,7 @@
 package frontEnd;
 import backEnd.Arbitro;
 import backEnd.ArbitroDAO;
+import backEnd.Utilidades;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -19,6 +20,7 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
      */
     public VistaArbitrosCrear() {
         initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
     }
 
     /**

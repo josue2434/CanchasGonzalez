@@ -6,6 +6,7 @@ package frontEnd;
 
 import backEnd.Arbitro;
 import backEnd.ArbitroDAO;
+import backEnd.Utilidades;
 
 /**
  *
@@ -18,10 +19,12 @@ public class VistaArbitrosVerPorId extends javax.swing.JFrame {
      */
     public VistaArbitrosVerPorId() {
         initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
     }
     
     public VistaArbitrosVerPorId(int idArbitro) {
         initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
         
         ArbitroDAO arbitroDAO = new ArbitroDAO();
         Arbitro arbitro = arbitroDAO.obtenerArbitroPorId(idArbitro);

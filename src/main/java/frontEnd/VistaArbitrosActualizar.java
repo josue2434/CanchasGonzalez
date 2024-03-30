@@ -6,6 +6,7 @@ package frontEnd;
 
 import backEnd.Arbitro;
 import backEnd.ArbitroDAO;
+import backEnd.Utilidades;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -31,10 +32,13 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
     
     public VistaArbitrosActualizar() {
         initComponents();
+        
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
     }
     
     public VistaArbitrosActualizar(int idArbitro) {
         initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
         
         this.idArbitro = idArbitro;
         

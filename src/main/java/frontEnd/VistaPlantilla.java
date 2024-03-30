@@ -4,6 +4,8 @@
  */
 package frontEnd;
 
+import backEnd.Utilidades;
+
 /**
  *
  * @author josue
@@ -15,6 +17,7 @@ public class VistaPlantilla extends javax.swing.JFrame {
      */
     public VistaPlantilla() {
         initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
     }
 
     /**

@@ -7,6 +7,7 @@ import backEnd.Arbitro;
 import backEnd.ArbitroDAO;
 import backEnd.Equipo;
 import backEnd.EquipoDAO;
+import backEnd.Utilidades;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,11 +34,13 @@ public class VistaEquiposActualizar extends javax.swing.JFrame {
     
     public VistaEquiposActualizar() {
         initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
     }
     
     
      public VistaEquiposActualizar(int idEquipo) {
         initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
         
         this.idEquipo = idEquipo;
         

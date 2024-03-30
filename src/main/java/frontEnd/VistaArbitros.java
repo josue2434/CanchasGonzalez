@@ -6,6 +6,7 @@ package frontEnd;
 
 import backEnd.Arbitro;
 import backEnd.ArbitroDAO;
+import backEnd.Utilidades;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JFrame;
@@ -23,6 +24,8 @@ public class VistaArbitros extends javax.swing.JFrame {
      */
     public VistaArbitros() {
         initComponents();
+        
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
         
         
         DefaultTableModel model = (DefaultTableModel) tblArbitros.getModel();

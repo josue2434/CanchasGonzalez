@@ -8,6 +8,7 @@ import backEnd.Arbitro;
 import backEnd.ArbitroDAO;
 import backEnd.Jugador;
 import backEnd.JugadorDAO;
+import backEnd.Utilidades;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -27,6 +28,7 @@ public class VistaJugadores extends javax.swing.JFrame {
      */
     public VistaJugadores() {
         initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
         
         DefaultTableModel model = (DefaultTableModel) tblJugadores.getModel();
 

@@ -9,6 +9,7 @@ import backEnd.Equipo;
 import backEnd.EquipoDAO;
 import backEnd.Jugador;
 import backEnd.JugadorDAO;
+import backEnd.Utilidades;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -28,6 +29,7 @@ public class VistaEquiposVerPorId extends javax.swing.JFrame {
      */
     public VistaEquiposVerPorId() {
         initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
     }
     
     public VistaEquiposVerPorId(int idEquipo) {

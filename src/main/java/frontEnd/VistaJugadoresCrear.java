@@ -9,6 +9,7 @@ import backEnd.Equipo;
 import backEnd.EquipoDAO;
 import backEnd.Jugador;
 import backEnd.JugadorDAO;
+import backEnd.Utilidades;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.sql.SQLException;
@@ -29,6 +30,7 @@ public class VistaJugadoresCrear extends javax.swing.JFrame {
      */
     public VistaJugadoresCrear() {
        initComponents();
+       Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
         
         try {
             

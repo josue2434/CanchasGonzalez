@@ -7,6 +7,7 @@ import backEnd.Arbitro;
 import backEnd.ArbitroDAO;
 import backEnd.Equipo;
 import backEnd.EquipoDAO;
+import backEnd.Utilidades;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,6 +25,7 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
      */
     public VistaEquiposCrear() {
         initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
     }
 
     /**

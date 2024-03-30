@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package frontEnd;
+import backEnd.Utilidades;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -17,6 +18,7 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
      */
     public VistaJugadoresVerPorId() {
         initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
     }
 
     /**

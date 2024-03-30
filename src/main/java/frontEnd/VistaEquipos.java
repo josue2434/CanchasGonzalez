@@ -8,6 +8,7 @@ import backEnd.Arbitro;
 import backEnd.ArbitroDAO;
 import backEnd.Equipo;
 import backEnd.EquipoDAO;
+import backEnd.Utilidades;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -27,6 +28,8 @@ public class VistaEquipos extends javax.swing.JFrame {
      */
     public VistaEquipos() {
         initComponents();
+        
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
         
         DefaultTableModel model = (DefaultTableModel) tblEquipos.getModel();
 

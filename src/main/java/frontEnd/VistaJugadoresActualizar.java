@@ -4,6 +4,7 @@
  */
 package frontEnd;
 
+import backEnd.Utilidades;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -18,6 +19,7 @@ public class VistaJugadoresActualizar extends javax.swing.JFrame {
      */
     public VistaJugadoresActualizar() {
         initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
     }
 
     /**
