@@ -37,23 +37,22 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLogoEmpresa = new javax.swing.JLabel();
         btnCrearEquipo = new javax.swing.JButton();
-        btnRegresar = new javax.swing.JButton();
         lblNombre = new javax.swing.JLabel();
         lbLTelefono = new javax.swing.JLabel();
         txtfNombre = new javax.swing.JTextField();
         txtfTelefono = new javax.swing.JTextField();
+        btnRegresar2 = new javax.swing.JButton();
+        lblIcono = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
+        lblLogoEmpresa = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
+        lblAside = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("CREAR ARBITRO");
+        setTitle("CREAR EQUIPO");
         setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
-
-        lblLogoEmpresa.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\LOGOEMPRESA.png")); // NOI18N
-        getContentPane().add(lblLogoEmpresa);
-        lblLogoEmpresa.setBounds(-40, 0, 180, 190);
 
         btnCrearEquipo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnCrearEquipo.setText("CREAR EQUIPO");
@@ -63,27 +62,19 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCrearEquipo);
-        btnCrearEquipo.setBounds(960, 600, 290, 70);
-
-        btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btnRegresar.setText("REGRESAR");
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnRegresar);
-        btnRegresar.setBounds(30, 630, 190, 70);
+        btnCrearEquipo.setBounds(480, 500, 290, 70);
 
         lblNombre.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombre.setText("NOMBRE");
         getContentPane().add(lblNombre);
-        lblNombre.setBounds(430, 290, 250, 40);
+        lblNombre.setBounds(420, 140, 400, 40);
 
         lbLTelefono.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        lbLTelefono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbLTelefono.setText("TELEFONO");
         getContentPane().add(lbLTelefono);
-        lbLTelefono.setBounds(430, 450, 310, 40);
+        lbLTelefono.setBounds(420, 300, 400, 40);
 
         txtfNombre.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         txtfNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +83,7 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfNombre);
-        txtfNombre.setBounds(340, 360, 400, 60);
+        txtfNombre.setBounds(420, 210, 400, 60);
 
         txtfTelefono.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         txtfTelefono.addActionListener(new java.awt.event.ActionListener() {
@@ -101,12 +92,39 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfTelefono);
-        txtfTelefono.setBounds(340, 530, 400, 60);
+        txtfTelefono.setBounds(420, 380, 400, 60);
+
+        btnRegresar2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnRegresar2.setText("REGRESAR");
+        btnRegresar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresar2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegresar2);
+        btnRegresar2.setBounds(30, 600, 190, 70);
+
+        lblIcono.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\equipos.png")); // NOI18N
+        getContentPane().add(lblIcono);
+        lblIcono.setBounds(900, 210, 340, 250);
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        lblTitulo.setText("EQUIPOS");
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("EQUIPO");
         getContentPane().add(lblTitulo);
-        lblTitulo.setBounds(450, 0, 440, 80);
+        lblTitulo.setBounds(0, 320, 250, 80);
+
+        lblLogoEmpresa.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\LOGOEMPRESA.png")); // NOI18N
+        getContentPane().add(lblLogoEmpresa);
+        lblLogoEmpresa.setBounds(20, 80, 180, 190);
+
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\fondo1.png")); // NOI18N
+        getContentPane().add(lblFondo);
+        lblFondo.setBounds(250, 0, 1030, 720);
+
+        lblAside.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\FONDOC.jpg")); // NOI18N
+        getContentPane().add(lblAside);
+        lblAside.setBounds(0, 0, 1290, 730);
 
         pack();
         setLocationRelativeTo(null);
@@ -164,14 +182,6 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnCrearEquipoActionPerformed
 
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        // TODO add your handling code here:
-     VistaEquipos vistaEquipos = new VistaEquipos();
-     vistaEquipos.setVisible(true);
-     dispose();
-            
-    }//GEN-LAST:event_btnRegresarActionPerformed
-
     private void txtfNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfNombreActionPerformed
@@ -179,6 +189,13 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
     private void txtfTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfTelefonoActionPerformed
+
+    private void btnRegresar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar2ActionPerformed
+        // TODO add your handling code here:
+        VistaEquipos vistaEquipos = new VistaEquipos();
+        vistaEquipos.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnRegresar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,8 +249,11 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearEquipo;
-    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnRegresar2;
     private javax.swing.JLabel lbLTelefono;
+    private javax.swing.JLabel lblAside;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblIcono;
     private javax.swing.JLabel lblLogoEmpresa;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTitulo;

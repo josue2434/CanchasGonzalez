@@ -62,9 +62,12 @@ public class VistaArbitrosVerPorId extends javax.swing.JFrame {
         txtfNombres = new javax.swing.JTextField();
         txtfApellidoPaterno = new javax.swing.JTextField();
         txtfApellidoMaterno = new javax.swing.JTextField();
-        lblLogoEmpresa = new javax.swing.JLabel();
+        lblIcono = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
-        btnRegresar = new javax.swing.JButton();
+        btnRegresar2 = new javax.swing.JButton();
+        lblLogoEmpresa = new javax.swing.JLabel();
+        lblAside = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INFORMACION DE ARBITRO");
@@ -74,37 +77,37 @@ public class VistaArbitrosVerPorId extends javax.swing.JFrame {
         lblIdArbitro1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblIdArbitro1.setText("ID ARBITRO");
         getContentPane().add(lblIdArbitro1);
-        lblIdArbitro1.setBounds(270, 140, 190, 40);
+        lblIdArbitro1.setBounds(430, 90, 190, 40);
 
         lblNombres1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblNombres1.setText("NOMBRES");
         getContentPane().add(lblNombres1);
-        lblNombres1.setBounds(270, 210, 190, 40);
+        lblNombres1.setBounds(430, 160, 190, 40);
 
         lblApellidoPaterno1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblApellidoPaterno1.setText("APELLIDO  PATERNO");
         getContentPane().add(lblApellidoPaterno1);
-        lblApellidoPaterno1.setBounds(270, 270, 250, 40);
+        lblApellidoPaterno1.setBounds(430, 220, 250, 40);
 
         lblApellidoMaterno1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblApellidoMaterno1.setText("APELLIDO  MATERNO");
         getContentPane().add(lblApellidoMaterno1);
-        lblApellidoMaterno1.setBounds(270, 340, 250, 40);
+        lblApellidoMaterno1.setBounds(430, 290, 250, 40);
 
         lblTelefono1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblTelefono1.setText("TELEFONO");
         getContentPane().add(lblTelefono1);
-        lblTelefono1.setBounds(270, 410, 250, 40);
+        lblTelefono1.setBounds(430, 360, 250, 40);
 
         cmbDisponible.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         cmbDisponible.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NO", "SI" }));
         getContentPane().add(cmbDisponible);
-        cmbDisponible.setBounds(590, 480, 330, 50);
+        cmbDisponible.setBounds(750, 430, 330, 50);
 
         lblTelefono2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblTelefono2.setText("DISPONIBLE");
         getContentPane().add(lblTelefono2);
-        lblTelefono2.setBounds(270, 490, 250, 40);
+        lblTelefono2.setBounds(430, 440, 250, 40);
 
         txtfTelefono.setEditable(false);
         txtfTelefono.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -114,7 +117,7 @@ public class VistaArbitrosVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfTelefono);
-        txtfTelefono.setBounds(590, 410, 330, 40);
+        txtfTelefono.setBounds(750, 360, 330, 40);
 
         txtfIdArbitro1.setEditable(false);
         txtfIdArbitro1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -124,7 +127,7 @@ public class VistaArbitrosVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfIdArbitro1);
-        txtfIdArbitro1.setBounds(590, 140, 330, 40);
+        txtfIdArbitro1.setBounds(750, 90, 330, 40);
 
         txtfNombres.setEditable(false);
         txtfNombres.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -134,7 +137,7 @@ public class VistaArbitrosVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfNombres);
-        txtfNombres.setBounds(590, 200, 330, 40);
+        txtfNombres.setBounds(750, 150, 330, 40);
 
         txtfApellidoPaterno.setEditable(false);
         txtfApellidoPaterno.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -144,7 +147,7 @@ public class VistaArbitrosVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfApellidoPaterno);
-        txtfApellidoPaterno.setBounds(590, 270, 330, 40);
+        txtfApellidoPaterno.setBounds(750, 220, 330, 40);
 
         txtfApellidoMaterno.setEditable(false);
         txtfApellidoMaterno.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -154,26 +157,39 @@ public class VistaArbitrosVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfApellidoMaterno);
-        txtfApellidoMaterno.setBounds(590, 340, 330, 40);
+        txtfApellidoMaterno.setBounds(750, 290, 330, 40);
+
+        lblIcono.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\arbitro.png")); // NOI18N
+        getContentPane().add(lblIcono);
+        lblIcono.setBounds(1000, 360, 340, 380);
+
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\fondo1.png")); // NOI18N
+        getContentPane().add(lblFondo);
+        lblFondo.setBounds(250, 0, 1030, 720);
+
+        lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("ARBITRO");
+        getContentPane().add(lblTitulo);
+        lblTitulo.setBounds(0, 320, 250, 80);
+
+        btnRegresar2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnRegresar2.setText("REGRESAR");
+        btnRegresar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresar2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegresar2);
+        btnRegresar2.setBounds(30, 600, 190, 70);
 
         lblLogoEmpresa.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\LOGOEMPRESA.png")); // NOI18N
         getContentPane().add(lblLogoEmpresa);
-        lblLogoEmpresa.setBounds(-40, 0, 180, 190);
+        lblLogoEmpresa.setBounds(20, 80, 180, 190);
 
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        lblTitulo.setText("ARBITROS");
-        getContentPane().add(lblTitulo);
-        lblTitulo.setBounds(450, 0, 440, 80);
-
-        btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btnRegresar.setText("REGRESAR");
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnRegresar);
-        btnRegresar.setBounds(30, 630, 190, 70);
+        lblAside.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\FONDOC.jpg")); // NOI18N
+        getContentPane().add(lblAside);
+        lblAside.setBounds(0, 0, 1290, 730);
 
         getAccessibleContext().setAccessibleName(" ARBITRO");
 
@@ -201,13 +217,12 @@ public class VistaArbitrosVerPorId extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfApellidoMaternoActionPerformed
 
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+    private void btnRegresar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar2ActionPerformed
         // TODO add your handling code here:
         VistaArbitros vistaArbitros = new VistaArbitros();
         vistaArbitros.setVisible(true);
         dispose();
-
-    }//GEN-LAST:event_btnRegresarActionPerformed
+    }//GEN-LAST:event_btnRegresar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,10 +267,13 @@ public class VistaArbitrosVerPorId extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnRegresar2;
     private javax.swing.JComboBox<String> cmbDisponible;
     private javax.swing.JLabel lblApellidoMaterno1;
     private javax.swing.JLabel lblApellidoPaterno1;
+    private javax.swing.JLabel lblAside;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblIcono;
     private javax.swing.JLabel lblIdArbitro1;
     private javax.swing.JLabel lblLogoEmpresa;
     private javax.swing.JLabel lblNombres1;

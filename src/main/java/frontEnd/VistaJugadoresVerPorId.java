@@ -30,8 +30,6 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLogoEmpresa = new javax.swing.JLabel();
-        btnRegresar = new javax.swing.JButton();
         lblIdArbitro1 = new javax.swing.JLabel();
         lblNombres1 = new javax.swing.JLabel();
         lblApellidoPaterno1 = new javax.swing.JLabel();
@@ -48,66 +46,57 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
         txtfPosicion = new javax.swing.JTextField();
         txtfFechaNacimiento = new javax.swing.JTextField();
         txtfIdEquipo = new javax.swing.JTextField();
+        lblLogoEmpresa = new javax.swing.JLabel();
+        btnRegresar2 = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
+        lblIcono = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
+        lblAside = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CREAR ARBITRO");
         setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
 
-        lblLogoEmpresa.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\LOGOEMPRESA.png")); // NOI18N
-        getContentPane().add(lblLogoEmpresa);
-        lblLogoEmpresa.setBounds(-40, 0, 180, 190);
-
-        btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btnRegresar.setText("REGRESAR");
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnRegresar);
-        btnRegresar.setBounds(30, 630, 190, 70);
-
         lblIdArbitro1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblIdArbitro1.setText("ID JUGADOR");
         getContentPane().add(lblIdArbitro1);
-        lblIdArbitro1.setBounds(280, 80, 190, 40);
+        lblIdArbitro1.setBounds(340, 50, 190, 40);
 
         lblNombres1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblNombres1.setText("NOMBRES");
         getContentPane().add(lblNombres1);
-        lblNombres1.setBounds(280, 150, 190, 40);
+        lblNombres1.setBounds(340, 120, 190, 40);
 
         lblApellidoPaterno1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblApellidoPaterno1.setText("APELLIDO  PATERNO");
         getContentPane().add(lblApellidoPaterno1);
-        lblApellidoPaterno1.setBounds(280, 210, 250, 40);
+        lblApellidoPaterno1.setBounds(340, 180, 250, 40);
 
         lblApellidoMaterno1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblApellidoMaterno1.setText("APELLIDO  MATERNO");
         getContentPane().add(lblApellidoMaterno1);
-        lblApellidoMaterno1.setBounds(280, 280, 250, 40);
+        lblApellidoMaterno1.setBounds(340, 250, 250, 40);
 
         lblNumeroCamiseta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblNumeroCamiseta.setText("NUMERO CAMISETA");
         getContentPane().add(lblNumeroCamiseta);
-        lblNumeroCamiseta.setBounds(280, 350, 250, 40);
+        lblNumeroCamiseta.setBounds(340, 320, 250, 40);
 
         lblPosicion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblPosicion.setText("POSICION");
         getContentPane().add(lblPosicion);
-        lblPosicion.setBounds(280, 430, 250, 40);
+        lblPosicion.setBounds(340, 390, 250, 40);
 
         lblFechaNacimiento.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblFechaNacimiento.setText("FECHA NACIMIENTO");
         getContentPane().add(lblFechaNacimiento);
-        lblFechaNacimiento.setBounds(280, 490, 250, 40);
+        lblFechaNacimiento.setBounds(340, 450, 250, 40);
 
         lblIdEquipo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblIdEquipo.setText("ID EQUIPO");
         getContentPane().add(lblIdEquipo);
-        lblIdEquipo.setBounds(280, 550, 250, 40);
+        lblIdEquipo.setBounds(340, 510, 250, 40);
 
         txtfIdJugador.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfIdJugador.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +105,7 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfIdJugador);
-        txtfIdJugador.setBounds(600, 80, 330, 40);
+        txtfIdJugador.setBounds(660, 50, 330, 40);
 
         txtfNombres.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfNombres.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +114,7 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfNombres);
-        txtfNombres.setBounds(600, 140, 330, 40);
+        txtfNombres.setBounds(660, 110, 330, 40);
 
         txtfApellidoPaterno.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfApellidoPaterno.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +123,7 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfApellidoPaterno);
-        txtfApellidoPaterno.setBounds(600, 210, 330, 40);
+        txtfApellidoPaterno.setBounds(660, 180, 330, 40);
 
         txtfApellidoMaterno.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfApellidoMaterno.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +132,7 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfApellidoMaterno);
-        txtfApellidoMaterno.setBounds(600, 280, 330, 40);
+        txtfApellidoMaterno.setBounds(660, 250, 330, 40);
 
         txtfNumeroCamiseta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfNumeroCamiseta.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +141,7 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfNumeroCamiseta);
-        txtfNumeroCamiseta.setBounds(600, 350, 330, 40);
+        txtfNumeroCamiseta.setBounds(660, 320, 330, 40);
 
         txtfPosicion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfPosicion.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +150,7 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfPosicion);
-        txtfPosicion.setBounds(600, 430, 330, 40);
+        txtfPosicion.setBounds(660, 390, 330, 40);
 
         txtfFechaNacimiento.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfFechaNacimiento.addActionListener(new java.awt.event.ActionListener() {
@@ -170,7 +159,7 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfFechaNacimiento);
-        txtfFechaNacimiento.setBounds(600, 490, 330, 40);
+        txtfFechaNacimiento.setBounds(660, 450, 330, 40);
 
         txtfIdEquipo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtfIdEquipo.addActionListener(new java.awt.event.ActionListener() {
@@ -179,23 +168,43 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfIdEquipo);
-        txtfIdEquipo.setBounds(600, 550, 330, 40);
+        txtfIdEquipo.setBounds(660, 510, 330, 40);
+
+        lblLogoEmpresa.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\LOGOEMPRESA.png")); // NOI18N
+        getContentPane().add(lblLogoEmpresa);
+        lblLogoEmpresa.setBounds(20, 80, 180, 190);
+
+        btnRegresar2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnRegresar2.setText("REGRESAR");
+        btnRegresar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresar2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegresar2);
+        btnRegresar2.setBounds(30, 600, 190, 70);
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        lblTitulo.setText("JUGADORES");
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("JUGADOR");
         getContentPane().add(lblTitulo);
-        lblTitulo.setBounds(450, 0, 440, 80);
+        lblTitulo.setBounds(0, 320, 250, 80);
+
+        lblIcono.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\jugadores.png")); // NOI18N
+        getContentPane().add(lblIcono);
+        lblIcono.setBounds(1000, 170, 340, 380);
+
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\fondo1.png")); // NOI18N
+        getContentPane().add(lblFondo);
+        lblFondo.setBounds(250, 0, 1030, 720);
+
+        lblAside.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\FONDOC.jpg")); // NOI18N
+        getContentPane().add(lblAside);
+        lblAside.setBounds(0, 0, 1290, 730);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        // TODO add your handling code here:
-     VistaJugadores vistaJugadores = new VistaJugadores();
-     vistaJugadores.setVisible(true);
-     dispose();
-    }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void txtfIdJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfIdJugadorActionPerformed
         // TODO add your handling code here:
@@ -228,6 +237,12 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
     private void txtfIdEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfIdEquipoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfIdEquipoActionPerformed
+
+    private void btnRegresar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar2ActionPerformed
+        VistaJugadores vistaJugadores = new VistaJugadores();
+        vistaJugadores.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnRegresar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,10 +295,13 @@ public class VistaJugadoresVerPorId extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnRegresar2;
     private javax.swing.JLabel lblApellidoMaterno1;
     private javax.swing.JLabel lblApellidoPaterno1;
+    private javax.swing.JLabel lblAside;
     private javax.swing.JLabel lblFechaNacimiento;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblIcono;
     private javax.swing.JLabel lblIdArbitro1;
     private javax.swing.JLabel lblIdEquipo;
     private javax.swing.JLabel lblLogoEmpresa;

@@ -33,10 +33,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnArbitros = new javax.swing.JButton();
         btnEquipos = new javax.swing.JButton();
         btnJugadores = new javax.swing.JButton();
+        lblLogo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
 
         btnCanchas.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -47,7 +51,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCanchas);
-        btnCanchas.setBounds(220, 60, 260, 110);
+        btnCanchas.setBounds(70, 100, 320, 110);
 
         btnArbitros.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnArbitros.setText("ARBITROS");
@@ -57,7 +61,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnArbitros);
-        btnArbitros.setBounds(210, 320, 300, 100);
+        btnArbitros.setBounds(70, 500, 320, 110);
 
         btnEquipos.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnEquipos.setText("EQUIPOS");
@@ -67,7 +71,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnEquipos);
-        btnEquipos.setBounds(700, 60, 320, 110);
+        btnEquipos.setBounds(890, 90, 320, 110);
 
         btnJugadores.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnJugadores.setText("JUGADORES");
@@ -77,19 +81,28 @@ public class VistaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnJugadores);
-        btnJugadores.setBounds(700, 320, 340, 110);
+        btnJugadores.setBounds(890, 490, 320, 110);
+
+        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\LOGOEMPRESA.png")); // NOI18N
+        getContentPane().add(lblLogo);
+        lblLogo.setBounds(520, 160, 200, 210);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel1.setText("CANCHAS GONZÁLEZ");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(390, 330, 510, 140);
 
         lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\FONDOC.jpg")); // NOI18N
         getContentPane().add(lblFondo);
-        lblFondo.setBounds(0, 0, 1370, 780);
+        lblFondo.setBounds(0, -30, 1370, 780);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCanchasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCanchasActionPerformed
-        VistaCanchas vistaCanchas = new VistaCanchas();
-        vistaCanchas.setVisible(true);
+        VistaReservarCancha vistaReservarCancha = new VistaReservarCancha(Utilidades.fechaHoy());
+        vistaReservarCancha.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnCanchasActionPerformed
 
@@ -155,6 +168,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnCanchas;
     private javax.swing.JButton btnEquipos;
     private javax.swing.JButton btnJugadores;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblLogo;
     // End of variables declaration//GEN-END:variables
 }

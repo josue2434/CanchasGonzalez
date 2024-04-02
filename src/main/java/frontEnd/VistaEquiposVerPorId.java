@@ -86,34 +86,37 @@ public class VistaEquiposVerPorId extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLogoEmpresa = new javax.swing.JLabel();
-        btnRegresar = new javax.swing.JButton();
+        lblIcono = new javax.swing.JLabel();
+        lblIcono1 = new javax.swing.JLabel();
+        lblIcono2 = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lbLTelefono = new javax.swing.JLabel();
         txtfNombre = new javax.swing.JTextField();
         txtfTelefono = new javax.swing.JTextField();
-        lblTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEquipo = new javax.swing.JTable();
+        lblLogoEmpresa = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        btnRegresar2 = new javax.swing.JButton();
+        lblFondo = new javax.swing.JLabel();
+        lblAside = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CREAR ARBITRO");
         setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
 
-        lblLogoEmpresa.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\LOGOEMPRESA.png")); // NOI18N
-        getContentPane().add(lblLogoEmpresa);
-        lblLogoEmpresa.setBounds(-40, 0, 180, 190);
+        lblIcono.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\equipos.png")); // NOI18N
+        getContentPane().add(lblIcono);
+        lblIcono.setBounds(210, 620, 340, 100);
 
-        btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btnRegresar.setText("REGRESAR");
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnRegresar);
-        btnRegresar.setBounds(30, 630, 190, 70);
+        lblIcono1.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\equipos.png")); // NOI18N
+        getContentPane().add(lblIcono1);
+        lblIcono1.setBounds(880, 620, 340, 100);
+
+        lblIcono2.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\equipos.png")); // NOI18N
+        getContentPane().add(lblIcono2);
+        lblIcono2.setBounds(550, 620, 340, 100);
 
         lblNombre.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblNombre.setText("NOMBRE");
@@ -143,11 +146,6 @@ public class VistaEquiposVerPorId extends javax.swing.JFrame {
         getContentPane().add(txtfTelefono);
         txtfTelefono.setBounds(790, 140, 380, 40);
 
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        lblTitulo.setText("EQUIPOS");
-        getContentPane().add(lblTitulo);
-        lblTitulo.setBounds(540, -10, 440, 80);
-
         tblEquipo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tblEquipo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -171,17 +169,37 @@ public class VistaEquiposVerPorId extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(70, 210, 1170, 410);
 
+        lblLogoEmpresa.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\LOGOEMPRESA.png")); // NOI18N
+        getContentPane().add(lblLogoEmpresa);
+        lblLogoEmpresa.setBounds(0, 10, 180, 190);
+
+        lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("EQUIPOS");
+        getContentPane().add(lblTitulo);
+        lblTitulo.setBounds(550, 10, 250, 80);
+
+        btnRegresar2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnRegresar2.setText("REGRESAR");
+        btnRegresar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresar2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegresar2);
+        btnRegresar2.setBounds(30, 620, 190, 70);
+
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\fondo1.png")); // NOI18N
+        getContentPane().add(lblFondo);
+        lblFondo.setBounds(0, 210, 1280, 520);
+
+        lblAside.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\FONDOC.jpg")); // NOI18N
+        getContentPane().add(lblAside);
+        lblAside.setBounds(0, 0, 1290, 730);
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        // TODO add your handling code here:
-     VistaEquipos vistaEquipos = new VistaEquipos();
-     vistaEquipos.setVisible(true);
-     dispose();
-            
-    }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void txtfNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfNombreActionPerformed
         // TODO add your handling code here:
@@ -190,6 +208,12 @@ public class VistaEquiposVerPorId extends javax.swing.JFrame {
     private void txtfTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfTelefonoActionPerformed
+
+    private void btnRegresar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar2ActionPerformed
+        VistaEquipos vistaEquipos = new VistaEquipos();
+        vistaEquipos.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnRegresar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,9 +282,14 @@ public class VistaEquiposVerPorId extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnRegresar2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbLTelefono;
+    private javax.swing.JLabel lblAside;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblIcono;
+    private javax.swing.JLabel lblIcono1;
+    private javax.swing.JLabel lblIcono2;
     private javax.swing.JLabel lblLogoEmpresa;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTitulo;

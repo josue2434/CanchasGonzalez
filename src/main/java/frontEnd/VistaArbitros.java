@@ -69,15 +69,20 @@ public class VistaArbitros extends javax.swing.JFrame {
         btnActualizar1 = new javax.swing.JButton();
         btnEliminar1 = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
+        lblLogo = new javax.swing.JLabel();
+        lblIcono = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
+        lblAside = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("ARBITROS");
         getContentPane().add(lblTitulo);
-        lblTitulo.setBounds(490, 10, 470, 60);
+        lblTitulo.setBounds(70, 20, 750, 60);
 
         tblArbitros.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tblArbitros.setModel(new javax.swing.table.DefaultTableModel(
@@ -108,7 +113,7 @@ public class VistaArbitros extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblArbitros);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(70, 110, 750, 410);
+        jScrollPane1.setBounds(70, 110, 750, 500);
 
         btnVisualizar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnVisualizar.setText("VISUALIZAR");
@@ -118,7 +123,7 @@ public class VistaArbitros extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnVisualizar);
-        btnVisualizar.setBounds(890, 320, 230, 40);
+        btnVisualizar.setBounds(960, 250, 230, 40);
 
         btnCrear1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnCrear1.setText("CREAR");
@@ -128,7 +133,7 @@ public class VistaArbitros extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCrear1);
-        btnCrear1.setBounds(890, 230, 220, 40);
+        btnCrear1.setBounds(960, 200, 230, 40);
 
         btnActualizar1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnActualizar1.setText("ACTUALIZAR");
@@ -138,7 +143,7 @@ public class VistaArbitros extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnActualizar1);
-        btnActualizar1.setBounds(890, 400, 230, 40);
+        btnActualizar1.setBounds(960, 300, 230, 40);
 
         btnEliminar1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnEliminar1.setText("ELIMINAR");
@@ -148,7 +153,7 @@ public class VistaArbitros extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnEliminar1);
-        btnEliminar1.setBounds(890, 470, 230, 40);
+        btnEliminar1.setBounds(960, 350, 230, 40);
 
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnRegresar.setText("REGRESAR");
@@ -159,6 +164,22 @@ public class VistaArbitros extends javax.swing.JFrame {
         });
         getContentPane().add(btnRegresar);
         btnRegresar.setBounds(40, 630, 190, 70);
+
+        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\LOGOEMPRESA.png")); // NOI18N
+        getContentPane().add(lblLogo);
+        lblLogo.setBounds(970, 0, 230, 170);
+
+        lblIcono.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\arbitro.png")); // NOI18N
+        getContentPane().add(lblIcono);
+        lblIcono.setBounds(910, 410, 340, 380);
+
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\fondo1.png")); // NOI18N
+        getContentPane().add(lblFondo);
+        lblFondo.setBounds(0, 0, 880, 730);
+
+        lblAside.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\FONDOC.jpg")); // NOI18N
+        getContentPane().add(lblAside);
+        lblAside.setBounds(880, 0, 400, 730);
 
         pack();
         setLocationRelativeTo(null);
@@ -309,6 +330,10 @@ public class VistaArbitros extends javax.swing.JFrame {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnVisualizar;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAside;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblIcono;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTable tblArbitros;
     // End of variables declaration//GEN-END:variables

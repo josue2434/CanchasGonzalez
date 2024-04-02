@@ -373,6 +373,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         lblAV3 = new javax.swing.JLabel();
         lblAV2 = new javax.swing.JLabel();
         lblAV1 = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         lblEncabezado = new javax.swing.JLabel();
@@ -447,11 +448,12 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         getContentPane().add(lblRV5);
         lblRV5.setBounds(1030, 570, 140, 20);
 
-        jpFecha.setBackground(new java.awt.Color(51, 51, 51));
+        jpFecha.setBackground(new java.awt.Color(255, 255, 255));
         jpFecha.setBorder(new javax.swing.border.MatteBorder(null));
         jpFecha.setForeground(new java.awt.Color(255, 255, 204));
+        jpFecha.setOpaque(false);
         getContentPane().add(jpFecha);
-        jpFecha.setBounds(220, 10, 350, 40);
+        jpFecha.setBounds(230, 10, 330, 40);
 
         lblIdArbitro.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblIdArbitro.setForeground(new java.awt.Color(255, 255, 255));
@@ -983,6 +985,16 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         getContentPane().add(lblAV1);
         lblAV1.setBounds(170, 630, 140, 20);
 
+        btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnRegresar.setText("REGRESAR");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegresar);
+        btnRegresar.setBounds(10, 580, 150, 60);
+
         lblFondo.setBackground(new java.awt.Color(153, 153, 153));
         lblFondo.setForeground(new java.awt.Color(102, 102, 102));
         lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\fondo1.png")); // NOI18N
@@ -1373,6 +1385,13 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnInfoV5ActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        VistaPrincipal vistaPrincipal = new VistaPrincipal();
+        vistaPrincipal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1435,6 +1454,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
     private javax.swing.JButton btnInfoV3;
     private javax.swing.JButton btnInfoV4;
     private javax.swing.JButton btnInfoV5;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cmbIdArbitro;
     private javax.swing.JComboBox<String> cmbIdEquipoLocal;
     private javax.swing.JComboBox<String> cmbIdEquipoVisitante;

@@ -70,7 +70,6 @@ public class VistaJugadores extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblJugadores = new javax.swing.JTable();
         btnVisualizar = new javax.swing.JButton();
@@ -78,16 +77,15 @@ public class VistaJugadores extends javax.swing.JFrame {
         btnActualizar1 = new javax.swing.JButton();
         btnEliminar1 = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
+        lblIcono = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
+        lblTitulo1 = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
+        lblAside = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
-
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("JUGADORES");
-        getContentPane().add(lblTitulo);
-        lblTitulo.setBounds(20, 10, 1250, 60);
 
         tblJugadores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tblJugadores.setModel(new javax.swing.table.DefaultTableModel(
@@ -106,11 +104,10 @@ public class VistaJugadores extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        tblJugadores.setEnabled(false);
         jScrollPane1.setViewportView(tblJugadores);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 100, 980, 510);
+        jScrollPane1.setBounds(30, 100, 950, 510);
 
         btnVisualizar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnVisualizar.setText("VISUALIZAR");
@@ -120,7 +117,7 @@ public class VistaJugadores extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnVisualizar);
-        btnVisualizar.setBounds(1030, 260, 230, 40);
+        btnVisualizar.setBounds(1040, 230, 210, 40);
 
         btnCrear1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnCrear1.setText("CREAR");
@@ -130,7 +127,7 @@ public class VistaJugadores extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCrear1);
-        btnCrear1.setBounds(1030, 200, 230, 40);
+        btnCrear1.setBounds(1040, 180, 210, 40);
 
         btnActualizar1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnActualizar1.setText("ACTUALIZAR");
@@ -140,7 +137,7 @@ public class VistaJugadores extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnActualizar1);
-        btnActualizar1.setBounds(1030, 320, 230, 40);
+        btnActualizar1.setBounds(1040, 280, 210, 40);
 
         btnEliminar1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnEliminar1.setText("ELIMINAR");
@@ -150,7 +147,7 @@ public class VistaJugadores extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnEliminar1);
-        btnEliminar1.setBounds(1030, 370, 230, 40);
+        btnEliminar1.setBounds(1040, 330, 210, 40);
 
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnRegresar.setText("REGRESAR");
@@ -161,6 +158,28 @@ public class VistaJugadores extends javax.swing.JFrame {
         });
         getContentPane().add(btnRegresar);
         btnRegresar.setBounds(40, 630, 190, 70);
+
+        lblIcono.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\jugadores.png")); // NOI18N
+        getContentPane().add(lblIcono);
+        lblIcono.setBounds(1010, 360, 340, 380);
+
+        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\LOGOEMPRESA.png")); // NOI18N
+        getContentPane().add(lblLogo);
+        lblLogo.setBounds(1040, 0, 230, 170);
+
+        lblTitulo1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        lblTitulo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo1.setText("JUGADORES");
+        getContentPane().add(lblTitulo1);
+        lblTitulo1.setBounds(70, 20, 910, 60);
+
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\fondo1.png")); // NOI18N
+        getContentPane().add(lblFondo);
+        lblFondo.setBounds(0, 0, 1010, 730);
+
+        lblAside.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\FONDOC.jpg")); // NOI18N
+        getContentPane().add(lblAside);
+        lblAside.setBounds(880, 0, 400, 730);
 
         pack();
         setLocationRelativeTo(null);
@@ -263,7 +282,11 @@ public class VistaJugadores extends javax.swing.JFrame {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnVisualizar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblAside;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblIcono;
+    private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblTitulo1;
     private javax.swing.JTable tblJugadores;
     // End of variables declaration//GEN-END:variables
 }
