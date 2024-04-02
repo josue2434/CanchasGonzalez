@@ -72,7 +72,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
                 btnInfoM1.setBackground(Color.RED);
                 btnInfoM1.setForeground(Color.WHITE);
             }else{
-                btnInfoM1.setBackground(Color.GREEN);
+                btnInfoM1.setBackground(Utilidades.VERDE);
                 btnInfoM1.setForeground(Color.WHITE);
             }
             btnInfoM1.setText(reservasPorFecha.get(0).isDisponible() ? "✅" : "❌" );
@@ -86,7 +86,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
                 btnInfoM2.setBackground(Color.RED);
                 btnInfoM2.setForeground(Color.WHITE);
             }else{
-                btnInfoM2.setBackground(Color.GREEN);
+                btnInfoM2.setBackground(Utilidades.VERDE);
                 btnInfoM2.setForeground(Color.WHITE);
             }
             btnInfoM2.setText(reservasPorFecha.get(1).isDisponible() ? "✅" : "❌" );
@@ -100,7 +100,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
                 btnInfoM3.setBackground(Color.RED);
                 btnInfoM3.setForeground(Color.WHITE);
             }else{
-                btnInfoM3.setBackground(Color.GREEN);
+                btnInfoM3.setBackground(Utilidades.VERDE);
                 btnInfoM3.setForeground(Color.WHITE);
             }
             btnInfoM3.setText(reservasPorFecha.get(2).isDisponible() ? "✅" : "❌" );
@@ -113,7 +113,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
                 btnInfoM4.setBackground(Color.RED);
                 btnInfoM4.setForeground(Color.WHITE);
             }else{
-                btnInfoM4.setBackground(Color.GREEN);
+                btnInfoM4.setBackground(Utilidades.VERDE);
                 btnInfoM4.setForeground(Color.WHITE);
             }
             btnInfoM4.setText(reservasPorFecha.get(3).isDisponible() ? "✅" : "❌" );
@@ -126,7 +126,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
                 btnInfoM5.setBackground(Color.RED);
                 btnInfoM5.setForeground(Color.WHITE);
             }else{
-                btnInfoM5.setBackground(Color.GREEN);
+                btnInfoM5.setBackground(Utilidades.VERDE);
                 btnInfoM5.setForeground(Color.WHITE);
             }
             btnInfoM5.setText(reservasPorFecha.get(4).isDisponible() ? "✅" : "❌" );
@@ -139,7 +139,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
                 btnInfoV1.setBackground(Color.RED);
                 btnInfoV1.setForeground(Color.WHITE);
             }else{
-                btnInfoV1.setBackground(Color.GREEN);
+                btnInfoV1.setBackground(Utilidades.VERDE);
                 btnInfoV1.setForeground(Color.WHITE);
             }
             btnInfoV1.setText(reservasPorFecha.get(5).isDisponible() ? "✅" : "❌" );
@@ -153,7 +153,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
                 btnInfoV2.setBackground(Color.RED);
                 btnInfoV2.setForeground(Color.WHITE);
             }else{
-                btnInfoV2.setBackground(Color.GREEN);
+                btnInfoV2.setBackground(Utilidades.VERDE);
                 btnInfoV2.setForeground(Color.WHITE);
             }
             btnInfoV2.setText(reservasPorFecha.get(6).isDisponible() ? "✅" : "❌" );
@@ -166,7 +166,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
                 btnInfoV3.setBackground(Color.RED);
                 btnInfoV3.setForeground(Color.WHITE);
             }else{
-                btnInfoV3.setBackground(Color.GREEN);
+                btnInfoV3.setBackground(Utilidades.VERDE);
                 btnInfoV3.setForeground(Color.WHITE);
             }
             btnInfoV3.setText(reservasPorFecha.get(7).isDisponible() ? "✅" : "❌" );
@@ -179,7 +179,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
                 btnInfoV4.setBackground(Color.RED);
                 btnInfoV4.setForeground(Color.WHITE);
             }else{
-                btnInfoV4.setBackground(Color.GREEN);
+                btnInfoV4.setBackground(Utilidades.VERDE);
                 btnInfoV4.setForeground(Color.WHITE);
             }
             btnInfoV4.setText(reservasPorFecha.get(8).isDisponible() ? "✅" : "❌" );
@@ -192,7 +192,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
                 btnInfoV5.setBackground(Color.RED);
                 btnInfoV5.setForeground(Color.WHITE);
             }else{
-                btnInfoV5.setBackground(Color.GREEN);
+                btnInfoV5.setBackground(Utilidades.VERDE);
                 btnInfoV5.setForeground(Color.WHITE);
             }        
             
@@ -304,7 +304,6 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         lblIdEquipoVisitante = new javax.swing.JLabel();
         txtfIdEquipoVisitante = new javax.swing.JTextField();
         cmbIdEquipoVisitante = new javax.swing.JComboBox<>();
-        lblLogoEmpresa = new javax.swing.JLabel();
         lblIdEquipoLocal = new javax.swing.JLabel();
         txtfIdEquipoLocal = new javax.swing.JTextField();
         cmbIdEquipoLocal = new javax.swing.JComboBox<>();
@@ -374,6 +373,9 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         lblAV3 = new javax.swing.JLabel();
         lblAV2 = new javax.swing.JLabel();
         lblAV1 = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
+        lblEncabezado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("RESERVAR CANCHAS");
@@ -386,77 +388,82 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         jSeparator2.setBounds(690, 0, 40, 170);
 
         lblRM1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRM1.setForeground(new java.awt.Color(0, 153, 255));
+        lblRM1.setForeground(new java.awt.Color(51, 51, 51));
         lblRM1.setText("RESERVA #");
         getContentPane().add(lblRM1);
         lblRM1.setBounds(180, 330, 140, 20);
 
         lblRM2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRM2.setForeground(new java.awt.Color(0, 153, 255));
+        lblRM2.setForeground(new java.awt.Color(51, 51, 51));
         lblRM2.setText("RESERVA #");
         getContentPane().add(lblRM2);
         lblRM2.setBounds(410, 330, 140, 20);
 
         lblRM3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRM3.setForeground(new java.awt.Color(0, 153, 255));
+        lblRM3.setForeground(new java.awt.Color(51, 51, 51));
         lblRM3.setText("RESERVA #");
         getContentPane().add(lblRM3);
         lblRM3.setBounds(630, 330, 140, 20);
 
         lblRM4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRM4.setForeground(new java.awt.Color(0, 153, 255));
+        lblRM4.setForeground(new java.awt.Color(51, 51, 51));
         lblRM4.setText("RESERVA #");
         getContentPane().add(lblRM4);
         lblRM4.setBounds(840, 330, 140, 20);
 
         lblRM5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRM5.setForeground(new java.awt.Color(0, 153, 255));
+        lblRM5.setForeground(new java.awt.Color(51, 51, 51));
         lblRM5.setText("RESERVA #");
         getContentPane().add(lblRM5);
         lblRM5.setBounds(1040, 330, 140, 20);
 
         lblRV1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRV1.setForeground(new java.awt.Color(0, 153, 255));
+        lblRV1.setForeground(new java.awt.Color(51, 51, 51));
         lblRV1.setText("RESERVA #");
         getContentPane().add(lblRV1);
         lblRV1.setBounds(170, 570, 140, 20);
 
         lblRV2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRV2.setForeground(new java.awt.Color(0, 153, 255));
+        lblRV2.setForeground(new java.awt.Color(51, 51, 51));
         lblRV2.setText("RESERVA #");
         getContentPane().add(lblRV2);
         lblRV2.setBounds(400, 570, 140, 20);
 
         lblRV3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRV3.setForeground(new java.awt.Color(0, 153, 255));
+        lblRV3.setForeground(new java.awt.Color(51, 51, 51));
         lblRV3.setText("RESERVA #");
         getContentPane().add(lblRV3);
         lblRV3.setBounds(620, 570, 140, 20);
 
         lblRV4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRV4.setForeground(new java.awt.Color(0, 153, 255));
+        lblRV4.setForeground(new java.awt.Color(51, 51, 51));
         lblRV4.setText("RESERVA #");
         getContentPane().add(lblRV4);
         lblRV4.setBounds(830, 570, 140, 20);
 
         lblRV5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRV5.setForeground(new java.awt.Color(0, 153, 255));
+        lblRV5.setForeground(new java.awt.Color(51, 51, 51));
         lblRV5.setText("RESERVA #");
         getContentPane().add(lblRV5);
         lblRV5.setBounds(1030, 570, 140, 20);
 
+        jpFecha.setBackground(new java.awt.Color(51, 51, 51));
         jpFecha.setBorder(new javax.swing.border.MatteBorder(null));
+        jpFecha.setForeground(new java.awt.Color(255, 255, 204));
         getContentPane().add(jpFecha);
-        jpFecha.setBounds(180, 10, 460, 50);
+        jpFecha.setBounds(220, 10, 350, 40);
 
-        lblIdArbitro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblIdArbitro.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblIdArbitro.setForeground(new java.awt.Color(255, 255, 255));
         lblIdArbitro.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblIdArbitro.setText("ARBITRO");
         getContentPane().add(lblIdArbitro);
         lblIdArbitro.setBounds(720, 110, 130, 40);
 
         txtfIdArbitro.setEditable(false);
+        txtfIdArbitro.setBackground(new java.awt.Color(255, 255, 255));
         txtfIdArbitro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtfIdArbitro.setForeground(new java.awt.Color(51, 51, 51));
         txtfIdArbitro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtfIdArbitroActionPerformed(evt);
@@ -466,17 +473,21 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         txtfIdArbitro.setBounds(930, 110, 260, 40);
 
         cmbIdArbitro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cmbIdArbitro.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(cmbIdArbitro);
         cmbIdArbitro.setBounds(860, 110, 70, 40);
 
-        lblIdEquipoVisitante.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblIdEquipoVisitante.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblIdEquipoVisitante.setForeground(new java.awt.Color(255, 255, 255));
         lblIdEquipoVisitante.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblIdEquipoVisitante.setText("VISITANTE");
         getContentPane().add(lblIdEquipoVisitante);
         lblIdEquipoVisitante.setBounds(720, 60, 130, 40);
 
         txtfIdEquipoVisitante.setEditable(false);
+        txtfIdEquipoVisitante.setBackground(new java.awt.Color(255, 255, 255));
         txtfIdEquipoVisitante.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtfIdEquipoVisitante.setForeground(new java.awt.Color(51, 51, 51));
         txtfIdEquipoVisitante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtfIdEquipoVisitanteActionPerformed(evt);
@@ -486,21 +497,21 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         txtfIdEquipoVisitante.setBounds(930, 60, 260, 40);
 
         cmbIdEquipoVisitante.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cmbIdEquipoVisitante.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(cmbIdEquipoVisitante);
         cmbIdEquipoVisitante.setBounds(860, 60, 70, 40);
 
-        lblLogoEmpresa.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\LOGOEMPRESA.png")); // NOI18N
-        getContentPane().add(lblLogoEmpresa);
-        lblLogoEmpresa.setBounds(0, 0, 180, 190);
-
-        lblIdEquipoLocal.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblIdEquipoLocal.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblIdEquipoLocal.setForeground(new java.awt.Color(255, 255, 255));
         lblIdEquipoLocal.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblIdEquipoLocal.setText("LOCAL");
         getContentPane().add(lblIdEquipoLocal);
         lblIdEquipoLocal.setBounds(760, 10, 90, 40);
 
         txtfIdEquipoLocal.setEditable(false);
+        txtfIdEquipoLocal.setBackground(new java.awt.Color(255, 255, 255));
         txtfIdEquipoLocal.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtfIdEquipoLocal.setForeground(new java.awt.Color(51, 51, 51));
         txtfIdEquipoLocal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtfIdEquipoLocalActionPerformed(evt);
@@ -510,6 +521,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         txtfIdEquipoLocal.setBounds(930, 10, 260, 40);
 
         cmbIdEquipoLocal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cmbIdEquipoLocal.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(cmbIdEquipoLocal);
         cmbIdEquipoLocal.setBounds(860, 10, 70, 40);
 
@@ -518,6 +530,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         jSeparator1.setBounds(30, 170, 1160, 10);
 
         btnDisponibilidad.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnDisponibilidad.setForeground(new java.awt.Color(51, 51, 51));
         btnDisponibilidad.setText("VER DISPONIBILIDAD");
         btnDisponibilidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -587,52 +600,69 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         getContentPane().add(btnInfoM5);
         btnInfoM5.setBounds(1080, 250, 60, 50);
 
+        lblM1.setForeground(new java.awt.Color(51, 51, 51));
         lblM1.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\cancha.png")); // NOI18N
         getContentPane().add(lblM1);
         lblM1.setBounds(180, 200, 150, 150);
 
+        lblM2.setForeground(new java.awt.Color(51, 51, 51));
         lblM2.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\cancha.png")); // NOI18N
         getContentPane().add(lblM2);
         lblM2.setBounds(410, 200, 150, 150);
 
+        lblM3.setForeground(new java.awt.Color(51, 51, 51));
         lblM3.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\cancha.png")); // NOI18N
         getContentPane().add(lblM3);
         lblM3.setBounds(630, 200, 150, 150);
 
+        lblM4.setForeground(new java.awt.Color(51, 51, 51));
         lblM4.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\cancha.png")); // NOI18N
         getContentPane().add(lblM4);
         lblM4.setBounds(840, 200, 150, 150);
 
+        lblM5.setForeground(new java.awt.Color(51, 51, 51));
         lblM5.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\cancha.png")); // NOI18N
         getContentPane().add(lblM5);
         lblM5.setBounds(1040, 200, 150, 150);
 
+        lbl2.setBackground(new java.awt.Color(153, 153, 153));
         lbl2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl2.setForeground(new java.awt.Color(51, 51, 51));
         lbl2.setText("CANCHA 1");
         getContentPane().add(lbl2);
         lbl2.setBounds(190, 180, 130, 32);
 
+        lbl3.setBackground(new java.awt.Color(153, 153, 153));
         lbl3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl3.setForeground(new java.awt.Color(51, 51, 51));
         lbl3.setText("CANCHA 2");
         getContentPane().add(lbl3);
         lbl3.setBounds(420, 180, 130, 32);
 
+        lbl4.setBackground(new java.awt.Color(153, 153, 153));
         lbl4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl4.setForeground(new java.awt.Color(51, 51, 51));
         lbl4.setText("CANCHA 3");
         getContentPane().add(lbl4);
         lbl4.setBounds(640, 180, 130, 32);
 
+        lbl5.setBackground(new java.awt.Color(153, 153, 153));
         lbl5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl5.setForeground(new java.awt.Color(51, 51, 51));
         lbl5.setText("CANCHA 4");
         getContentPane().add(lbl5);
         lbl5.setBounds(850, 180, 130, 32);
 
+        lbl6.setBackground(new java.awt.Color(153, 153, 153));
         lbl6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl6.setForeground(new java.awt.Color(51, 51, 51));
         lbl6.setText("CANCHA 5");
         getContentPane().add(lbl6);
         lbl6.setBounds(1050, 180, 130, 32);
 
-        lblTM.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblTM.setBackground(new java.awt.Color(153, 153, 153));
+        lblTM.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        lblTM.setForeground(new java.awt.Color(102, 102, 102));
         lblTM.setText("MATUTINO");
         getContentPane().add(lblTM);
         lblTM.setBounds(20, 250, 130, 32);
@@ -697,56 +727,74 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         getContentPane().add(btnInfoV5);
         btnInfoV5.setBounds(1070, 490, 60, 50);
 
+        lblM6.setForeground(new java.awt.Color(51, 51, 51));
         lblM6.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\cancha.png")); // NOI18N
         getContentPane().add(lblM6);
         lblM6.setBounds(170, 440, 150, 150);
 
+        lblM7.setForeground(new java.awt.Color(0, 0, 102));
         lblM7.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\cancha.png")); // NOI18N
         getContentPane().add(lblM7);
         lblM7.setBounds(400, 440, 150, 150);
 
+        lblM8.setForeground(new java.awt.Color(0, 0, 102));
         lblM8.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\cancha.png")); // NOI18N
         getContentPane().add(lblM8);
         lblM8.setBounds(620, 440, 150, 150);
 
+        lblM9.setForeground(new java.awt.Color(0, 0, 102));
         lblM9.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\cancha.png")); // NOI18N
         getContentPane().add(lblM9);
         lblM9.setBounds(830, 440, 150, 150);
 
+        lblM10.setForeground(new java.awt.Color(0, 0, 102));
         lblM10.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\cancha.png")); // NOI18N
         getContentPane().add(lblM10);
         lblM10.setBounds(1030, 440, 150, 150);
 
+        lbl7.setBackground(new java.awt.Color(153, 153, 153));
         lbl7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl7.setForeground(new java.awt.Color(51, 51, 51));
         lbl7.setText("CANCHA 1");
         getContentPane().add(lbl7);
         lbl7.setBounds(180, 420, 130, 32);
 
+        lbl8.setBackground(new java.awt.Color(153, 153, 153));
         lbl8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl8.setForeground(new java.awt.Color(51, 51, 51));
         lbl8.setText("CANCHA 2");
         getContentPane().add(lbl8);
         lbl8.setBounds(410, 420, 130, 32);
 
+        lbl9.setBackground(new java.awt.Color(153, 153, 153));
         lbl9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl9.setForeground(new java.awt.Color(51, 51, 51));
         lbl9.setText("CANCHA 3");
         getContentPane().add(lbl9);
         lbl9.setBounds(630, 420, 130, 32);
 
+        lbl10.setBackground(new java.awt.Color(153, 153, 153));
         lbl10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl10.setForeground(new java.awt.Color(51, 51, 51));
         lbl10.setText("CANCHA 4");
         getContentPane().add(lbl10);
         lbl10.setBounds(840, 420, 130, 32);
 
+        lbl11.setBackground(new java.awt.Color(153, 153, 153));
         lbl11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl11.setForeground(new java.awt.Color(51, 51, 51));
         lbl11.setText("CANCHA 5");
         getContentPane().add(lbl11);
         lbl11.setBounds(1040, 420, 130, 32);
 
-        lblTV.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblTV.setBackground(new java.awt.Color(153, 153, 153));
+        lblTV.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        lblTV.setForeground(new java.awt.Color(102, 102, 102));
         lblTV.setText("VESPERTINO");
         getContentPane().add(lblTV);
         lblTV.setBounds(10, 490, 150, 32);
 
+        lblFechaSeleccionada.setBackground(new java.awt.Color(153, 153, 153));
         lblFechaSeleccionada.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblFechaSeleccionada.setForeground(new java.awt.Color(255, 51, 51));
         lblFechaSeleccionada.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -754,121 +802,121 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         lblFechaSeleccionada.setBounds(10, 190, 160, 40);
 
         lblLM1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLM1.setForeground(new java.awt.Color(0, 153, 255));
+        lblLM1.setForeground(new java.awt.Color(0, 51, 102));
         lblLM1.setText("LOCAL");
         getContentPane().add(lblLM1);
         lblLM1.setBounds(180, 350, 140, 20);
 
         lblLM2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLM2.setForeground(new java.awt.Color(0, 153, 255));
+        lblLM2.setForeground(new java.awt.Color(0, 51, 102));
         lblLM2.setText("LOCAL");
         getContentPane().add(lblLM2);
         lblLM2.setBounds(410, 350, 140, 20);
 
         lblLM3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLM3.setForeground(new java.awt.Color(0, 153, 255));
+        lblLM3.setForeground(new java.awt.Color(0, 51, 102));
         lblLM3.setText("LOCAL");
         getContentPane().add(lblLM3);
         lblLM3.setBounds(630, 350, 140, 20);
 
         lblLM4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLM4.setForeground(new java.awt.Color(0, 153, 255));
+        lblLM4.setForeground(new java.awt.Color(0, 51, 102));
         lblLM4.setText("LOCAL");
         getContentPane().add(lblLM4);
         lblLM4.setBounds(840, 350, 140, 20);
 
         lblLM5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLM5.setForeground(new java.awt.Color(0, 153, 255));
+        lblLM5.setForeground(new java.awt.Color(0, 51, 102));
         lblLM5.setText("LOCAL");
         getContentPane().add(lblLM5);
         lblLM5.setBounds(1040, 350, 140, 20);
 
         lblLV1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLV1.setForeground(new java.awt.Color(0, 153, 255));
+        lblLV1.setForeground(new java.awt.Color(0, 0, 102));
         lblLV1.setText("LOCAL");
         getContentPane().add(lblLV1);
         lblLV1.setBounds(170, 590, 140, 20);
 
         lblLV2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLV2.setForeground(new java.awt.Color(0, 153, 255));
+        lblLV2.setForeground(new java.awt.Color(0, 0, 102));
         lblLV2.setText("LOCAL");
         getContentPane().add(lblLV2);
         lblLV2.setBounds(400, 590, 140, 20);
 
         lblLV3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLV3.setForeground(new java.awt.Color(0, 153, 255));
+        lblLV3.setForeground(new java.awt.Color(0, 0, 102));
         lblLV3.setText("LOCAL");
         getContentPane().add(lblLV3);
         lblLV3.setBounds(620, 590, 140, 20);
 
         lblLV4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLV4.setForeground(new java.awt.Color(0, 153, 255));
+        lblLV4.setForeground(new java.awt.Color(0, 0, 102));
         lblLV4.setText("LOCAL");
         getContentPane().add(lblLV4);
         lblLV4.setBounds(830, 590, 140, 20);
 
         lblLV5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLV5.setForeground(new java.awt.Color(0, 153, 255));
+        lblLV5.setForeground(new java.awt.Color(0, 0, 102));
         lblLV5.setText("LOCAL");
         getContentPane().add(lblLV5);
         lblLV5.setBounds(1030, 590, 140, 20);
 
         lblVM1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblVM1.setForeground(new java.awt.Color(0, 153, 255));
+        lblVM1.setForeground(new java.awt.Color(0, 51, 102));
         lblVM1.setText("VISITANTE");
         getContentPane().add(lblVM1);
         lblVM1.setBounds(180, 370, 140, 20);
 
         lblVM2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblVM2.setForeground(new java.awt.Color(0, 153, 255));
+        lblVM2.setForeground(new java.awt.Color(0, 51, 102));
         lblVM2.setText("VISITANTE");
         getContentPane().add(lblVM2);
         lblVM2.setBounds(410, 370, 140, 20);
 
         lblVM3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblVM3.setForeground(new java.awt.Color(0, 153, 255));
+        lblVM3.setForeground(new java.awt.Color(0, 51, 102));
         lblVM3.setText("VISITANTE");
         getContentPane().add(lblVM3);
         lblVM3.setBounds(630, 370, 140, 20);
 
         lblVM4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblVM4.setForeground(new java.awt.Color(0, 153, 255));
+        lblVM4.setForeground(new java.awt.Color(0, 51, 102));
         lblVM4.setText("VISITANTE");
         getContentPane().add(lblVM4);
         lblVM4.setBounds(840, 370, 140, 20);
 
         lblVM5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblVM5.setForeground(new java.awt.Color(0, 153, 255));
+        lblVM5.setForeground(new java.awt.Color(0, 51, 102));
         lblVM5.setText("VISITANTE");
         getContentPane().add(lblVM5);
         lblVM5.setBounds(1040, 370, 140, 20);
 
         lblVV1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblVV1.setForeground(new java.awt.Color(0, 153, 255));
+        lblVV1.setForeground(new java.awt.Color(0, 0, 102));
         lblVV1.setText("VISITANTE");
         getContentPane().add(lblVV1);
         lblVV1.setBounds(170, 610, 140, 20);
 
         lblVV2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblVV2.setForeground(new java.awt.Color(0, 153, 255));
+        lblVV2.setForeground(new java.awt.Color(0, 0, 102));
         lblVV2.setText("VISITANTE");
         getContentPane().add(lblVV2);
         lblVV2.setBounds(400, 610, 140, 20);
 
         lblVV3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblVV3.setForeground(new java.awt.Color(0, 153, 255));
+        lblVV3.setForeground(new java.awt.Color(0, 0, 102));
         lblVV3.setText("VISITANTE");
         getContentPane().add(lblVV3);
         lblVV3.setBounds(620, 610, 140, 20);
 
         lblVV4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblVV4.setForeground(new java.awt.Color(0, 153, 255));
+        lblVV4.setForeground(new java.awt.Color(0, 0, 102));
         lblVV4.setText("VISITANTE");
         getContentPane().add(lblVV4);
         lblVV4.setBounds(830, 610, 140, 20);
 
         lblVV5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblVV5.setForeground(new java.awt.Color(0, 153, 255));
+        lblVV5.setForeground(new java.awt.Color(0, 0, 102));
         lblVV5.setText("VISITANTE");
         getContentPane().add(lblVV5);
         lblVV5.setBounds(1030, 610, 140, 20);
@@ -876,64 +924,78 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         lblValidacion.setBounds(700, 0, 520, 170);
 
         lblAM1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAM1.setForeground(new java.awt.Color(0, 153, 255));
+        lblAM1.setForeground(new java.awt.Color(0, 51, 102));
         lblAM1.setText("ARBITRO");
         getContentPane().add(lblAM1);
         lblAM1.setBounds(180, 390, 140, 20);
 
         lblAM2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAM2.setForeground(new java.awt.Color(0, 153, 255));
+        lblAM2.setForeground(new java.awt.Color(0, 51, 102));
         lblAM2.setText("ARBITRO");
         getContentPane().add(lblAM2);
         lblAM2.setBounds(410, 390, 140, 20);
 
         lblAM3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAM3.setForeground(new java.awt.Color(0, 153, 255));
+        lblAM3.setForeground(new java.awt.Color(0, 51, 102));
         lblAM3.setText("ARBITRO");
         getContentPane().add(lblAM3);
         lblAM3.setBounds(630, 390, 140, 20);
 
         lblAM4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAM4.setForeground(new java.awt.Color(0, 153, 255));
+        lblAM4.setForeground(new java.awt.Color(0, 51, 102));
         lblAM4.setText("ARBITRO");
         getContentPane().add(lblAM4);
         lblAM4.setBounds(840, 390, 140, 20);
 
         lblAM5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAM5.setForeground(new java.awt.Color(0, 153, 255));
+        lblAM5.setForeground(new java.awt.Color(0, 51, 102));
         lblAM5.setText("ARBITRO");
         getContentPane().add(lblAM5);
         lblAM5.setBounds(1040, 390, 140, 20);
 
         lblAV5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAV5.setForeground(new java.awt.Color(0, 153, 255));
+        lblAV5.setForeground(new java.awt.Color(0, 0, 102));
         lblAV5.setText("ARBITRO");
         getContentPane().add(lblAV5);
         lblAV5.setBounds(1030, 630, 140, 20);
 
         lblAV4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAV4.setForeground(new java.awt.Color(0, 153, 255));
+        lblAV4.setForeground(new java.awt.Color(0, 0, 102));
         lblAV4.setText("ARBITRO");
         getContentPane().add(lblAV4);
         lblAV4.setBounds(830, 630, 140, 20);
 
         lblAV3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAV3.setForeground(new java.awt.Color(0, 153, 255));
+        lblAV3.setForeground(new java.awt.Color(0, 0, 102));
         lblAV3.setText("ARBITRO");
         getContentPane().add(lblAV3);
         lblAV3.setBounds(620, 630, 140, 20);
 
         lblAV2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAV2.setForeground(new java.awt.Color(0, 153, 255));
+        lblAV2.setForeground(new java.awt.Color(0, 0, 102));
         lblAV2.setText("ARBITRO");
         getContentPane().add(lblAV2);
         lblAV2.setBounds(400, 630, 140, 20);
 
         lblAV1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAV1.setForeground(new java.awt.Color(0, 153, 255));
+        lblAV1.setForeground(new java.awt.Color(0, 0, 102));
         lblAV1.setText("ARBITRO");
         getContentPane().add(lblAV1);
         lblAV1.setBounds(170, 630, 140, 20);
+
+        lblFondo.setBackground(new java.awt.Color(153, 153, 153));
+        lblFondo.setForeground(new java.awt.Color(102, 102, 102));
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\fondo1.png")); // NOI18N
+        getContentPane().add(lblFondo);
+        lblFondo.setBounds(0, 170, 1280, 550);
+
+        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\LOGOEMPRESA.png")); // NOI18N
+        getContentPane().add(lblLogo);
+        lblLogo.setBounds(-20, 0, 230, 170);
+
+        lblEncabezado.setIcon(new javax.swing.ImageIcon("C:\\Imagenes\\FONDOC.jpg")); // NOI18N
+        getContentPane().add(lblEncabezado);
+        lblEncabezado.setBounds(0, 0, 1280, 170);
 
         pack();
         setLocationRelativeTo(null);
@@ -1399,7 +1461,9 @@ public class VistaReservarCancha extends javax.swing.JFrame {
     private javax.swing.JLabel lblAV3;
     private javax.swing.JLabel lblAV4;
     private javax.swing.JLabel lblAV5;
+    private javax.swing.JLabel lblEncabezado;
     private javax.swing.JLabel lblFechaSeleccionada;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblIdArbitro;
     private javax.swing.JLabel lblIdEquipoLocal;
     private javax.swing.JLabel lblIdEquipoVisitante;
@@ -1413,7 +1477,7 @@ public class VistaReservarCancha extends javax.swing.JFrame {
     private javax.swing.JLabel lblLV3;
     private javax.swing.JLabel lblLV4;
     private javax.swing.JLabel lblLV5;
-    private javax.swing.JLabel lblLogoEmpresa;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblM1;
     private javax.swing.JLabel lblM10;
     private javax.swing.JLabel lblM2;

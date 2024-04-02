@@ -8,7 +8,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Utilidades {
-
+    public static final Color VERDE = new Color(33, 99, 00);
+    
     public static void cargarLogo(JFrame frame, String nombreImagen) {
         // Obtener la URL de la imagen
         String rutaAbsoluta = "file:///C:/Imagenes/" + nombreImagen;
