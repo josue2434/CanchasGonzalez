@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Utilidades {
 
@@ -32,6 +34,18 @@ public class Utilidades {
             System.err.println("No se pudo cargar la imagen.");
         }
 
+    }
+    
+    public static String fechaHoy() {
+        // Obtener la fecha actual
+        LocalDate fechaActual = LocalDate.now();
         
+        // Definir el formato deseado
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("YYYY-MM-dd");
+        
+        // Convertir la fecha en un string con el formato especificado
+        String fechaFormateada = fechaActual.format(formato);
+        
+        return fechaFormateada;
     }
 }

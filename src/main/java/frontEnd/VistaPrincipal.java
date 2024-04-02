@@ -88,7 +88,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCanchasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCanchasActionPerformed
-        // TODO add your handling code here:
+        VistaCanchas vistaCanchas = new VistaCanchas();
+        vistaCanchas.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnCanchasActionPerformed
 
     private void btnArbitrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArbitrosActionPerformed

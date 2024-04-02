@@ -74,7 +74,7 @@ public class ReservaDAO {
         return reserva;
     }
 
-    public List<Reserva> seleccionarTodasReservas() {
+    public List<Reserva> obtenerReservas() {
         List<Reserva> reservas = new ArrayList<>();
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_RESERVAS_SQL)) {
@@ -96,6 +96,31 @@ public class ReservaDAO {
             e.printStackTrace();
         }
         return reservas;
+    }
+    
+    public List<Reserva> obtenerReservasPorFecha(String fecha) {
+        List<Reserva> reservasPorFecha = new ArrayList<>();
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM reservas WHERE fecha_reserva = ?")) {
+            preparedStatement.setString(1, fecha);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int idReserva = rs.getInt("id_reserva");
+                int idEquipoLocal = rs.getInt("id_equipo_local");
+                int idEquipoVisitante = rs.getInt("id_equipo_visitante");
+                int idArbitro = rs.getInt("id_arbitro");
+                String fechaReserva = rs.getString("fecha_reserva");
+                int numeroCancha = rs.getInt("numero_cancha");
+                String horario = rs.getString("horario");
+                boolean disponible = rs.getBoolean("disponible");
+                Reserva reserva = new Reserva(idEquipoLocal, idEquipoVisitante, idArbitro, fechaReserva, numeroCancha, horario, disponible);
+                reserva.setIdReserva(idReserva);
+                reservasPorFecha.add(reserva);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return reservasPorFecha;
     }
 
     public int borrarReserva(int idReserva) {
@@ -129,4 +154,17 @@ public class ReservaDAO {
             return 0;
         }
     }
+    
+    public int actualizarDisponibilidadReserva(boolean disponible, int idReserva) {
+    try (Connection connection = getConnection();
+         PreparedStatement statement = connection.prepareStatement("UPDATE reservas SET disponible=? WHERE id_reserva=?")) {
+        statement.setBoolean(1, disponible);
+        statement.setInt(2, idReserva);
+        return statement.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return 0;
+    }
+}
+
 }
