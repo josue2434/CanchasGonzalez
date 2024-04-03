@@ -6,6 +6,7 @@ package frontEnd;
 
 import backEnd.Arbitro;
 import backEnd.ArbitroDAO;
+import backEnd.EquipoDAO;
 import backEnd.Jugador;
 import backEnd.JugadorDAO;
 import backEnd.Utilidades;
@@ -193,21 +194,51 @@ public class VistaJugadores extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCrear1ActionPerformed
 
     private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
-        // TODO add your handling code here:
-         VistaJugadoresVerPorId vistaJugadoresVerPorId  = new VistaJugadoresVerPorId();
-        vistaJugadoresVerPorId.setVisible(true);
-        dispose();
+        
+        int selectedRow = tblJugadores.getSelectedRow();
+
+        if(selectedRow != -1){
+            int idJugador = (int) tblJugadores.getValueAt(selectedRow, 0);
+            System.out.println(idJugador);
+
+            VistaJugadoresVerPorId vistaJugadoresVerPorId  = new VistaJugadoresVerPorId(idJugador);
+            vistaJugadoresVerPorId.setVisible(true);
+            dispose();
+        }else{
+             JOptionPane.showMessageDialog(null, "Por favor selecciona un equipo");
+        }
+        
+         
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
     private void btnActualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizar1ActionPerformed
-        // TODO add your handling code here:
-        VistaJugadoresActualizar vistaJugadoresActualizar  = new VistaJugadoresActualizar();
-        vistaJugadoresActualizar.setVisible(true);
-        dispose();
+      
+        int selectedRow = tblJugadores.getSelectedRow();
+
+        if(selectedRow != -1){
+            int idJugador = (int) tblJugadores.getValueAt(selectedRow, 0);
+            System.out.println(idJugador);
+
+            VistaJugadoresActualizar vistaJugadoresActualizar  = new VistaJugadoresActualizar(idJugador);
+            vistaJugadoresActualizar.setVisible(true);
+            dispose();
+        }else{
+             JOptionPane.showMessageDialog(null, "Por favor selecciona un equipo");
+        }
+        
+        
     }//GEN-LAST:event_btnActualizar1ActionPerformed
 
     private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
-        //CONFIRMACION PARA ELIMINAR
+        
+         int selectedRow = tblJugadores.getSelectedRow();
+
+        if(selectedRow != -1){
+            int idJugador = (int) tblJugadores.getValueAt(selectedRow, 0);
+            System.out.println(idJugador);
+            
+            //CONFIRMACION PARA ELIMINAR
+        
          int result = JOptionPane.showConfirmDialog(
                 new JFrame(),
                 "¿ESTAS SEGURO DE ELIMINAR ESTE REGISTRO?", 
@@ -216,17 +247,46 @@ public class VistaJugadores extends javax.swing.JFrame {
                 JOptionPane.QUESTION_MESSAGE
             );
 
-        if(result == JOptionPane.YES_OPTION){
-            System.out.println(1);
-            VistaJugadores vistaJugadores = new VistaJugadores();
-            vistaJugadores.setVisible(true);
-            dispose();
-           //label.setText("You selected: Yes");
-        }else if (result == JOptionPane.NO_OPTION){
-            System.out.println(2);
-           //label.setText("You selected: No");
-        }else {
-            System.out.println(3);
+            if(result == JOptionPane.YES_OPTION){
+                System.out.println(1);
+                
+                
+                int id;
+                try {
+                    JugadorDAO jugadorDAO = new JugadorDAO();
+                    id = jugadorDAO.eliminarJugador(idJugador);
+                    
+                    if (id != 0){
+                   JOptionPane.showMessageDialog(null, "Se ha eliminado el  jugador exitosamente.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+                   
+                   
+                    VistaJugadores vistaJugadores = new VistaJugadores();
+                    vistaJugadores.setVisible(true);
+                    dispose();
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null, "No se pudo eliminar el jugador, vuelve a intentar.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    
+                } catch (SQLException ex) {
+                    Logger.getLogger(VistaJugadores.class.getName()).log(Level.SEVERE, null, ex);
+                    JOptionPane.showMessageDialog(null, "No se pudo eliminar el jugador, vuelve a intentar.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+                }
+                
+                
+                
+
+                
+               //label.setText("You selected: Yes");
+            }else if (result == JOptionPane.NO_OPTION){
+                System.out.println(2);
+               //label.setText("You selected: No");
+            }else {
+                System.out.println(3);
+            }
+
+        }else{
+             JOptionPane.showMessageDialog(null, "Por favor selecciona un arbitro");
         }
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 

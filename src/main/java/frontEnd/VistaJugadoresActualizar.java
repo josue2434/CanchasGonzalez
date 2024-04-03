@@ -4,7 +4,14 @@
  */
 package frontEnd;
 
+import backEnd.Equipo;
+import backEnd.EquipoDAO;
+import backEnd.Jugador;
+import backEnd.JugadorDAO;
 import backEnd.Utilidades;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -13,7 +20,17 @@ import javax.swing.JOptionPane;
  * @author josue
  */
 public class VistaJugadoresActualizar extends javax.swing.JFrame {
+    private int idJugador;
 
+    public int getIdJugador() {
+        return idJugador;
+    }
+
+    public void setIdJugador(int idJugador) {
+        this.idJugador = idJugador;
+    }
+    
+    
     /**
      * Creates new form VistaPlantilla
      */
@@ -21,6 +38,34 @@ public class VistaJugadoresActualizar extends javax.swing.JFrame {
         initComponents();
         Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
     }
+    
+    public VistaJugadoresActualizar(int idJugador) {
+        initComponents();
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
+        
+        this.setIdJugador(idJugador);
+        try {
+            JugadorDAO jugadorDAO = new JugadorDAO();
+            
+            Jugador jugador1 = jugadorDAO.obtenerJugador(idJugador);
+            
+            txtfIdJugador.setText(String.valueOf(jugador1.getIdJugador()));
+            txtfNombres.setText(jugador1.getNombre());
+            txtfApellidoPaterno.setText(jugador1.getApellidoPaterno());
+            txtfApellidoMaterno.setText(jugador1.getApellidoMaterno());
+            txtfNumeroCamiseta.setText(String.valueOf(jugador1.getNumeroCamiseta()));
+            txtfPosicion.setText(jugador1.getPosicion());
+            txtfPosicion.setText(jugador1.getPosicion());
+            txtfFechaNacimiento.setText(jugador1.getFechaNacimiento());
+            txtfIdEquipo.setText(String.valueOf(jugador1.getIdEquipo()));
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(VistaJugadoresActualizar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -261,10 +306,10 @@ public class VistaJugadoresActualizar extends javax.swing.JFrame {
         int idEquipo = Integer.valueOf(txtfIdEquipo.getText());
          System.out.println(idEquipo);
          
-        
-         int result = JOptionPane.showConfirmDialog(
+        //CONFIRMACION DE CREAR
+        int result = JOptionPane.showConfirmDialog(
                 new JFrame(),
-                "¿ESTAS SEGURO DE ACTUALIZAR ESTE REGISTRO?", 
+                "¿ESTAS SEGURO DE ACTUALIZARLO?", 
                 "CANCHASGONZALEZ - CONFIRMACION",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE
@@ -272,9 +317,36 @@ public class VistaJugadoresActualizar extends javax.swing.JFrame {
 
         if(result == JOptionPane.YES_OPTION){
             System.out.println(1);
-            VistaJugadores vistaJugadores = new VistaJugadores();
-            vistaJugadores.setVisible(true);
-            dispose();
+            Jugador jugador1 = new Jugador(idEquipo, nombre, apellidoPaterno, apellidoMaterno, numeroCamiseta, posicion, fechaNacimiento);
+            
+            System.out.println(jugador1);
+          
+            int id;
+            try {
+                JugadorDAO jugadorDAO = new JugadorDAO();
+                id = jugadorDAO.actualizarJugador(jugador1, this.idJugador);
+               
+                
+                if (id != 0){
+                JOptionPane.showMessageDialog(null, "Se ha actualizado el jugador (" + nombre + ") exitosmente.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+                
+                VistaJugadores vistaJugadores = new VistaJugadores();
+                vistaJugadores.setVisible(true);
+                dispose();
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "No se pudo actualizar el jugador (" + nombre + ") vuelve a intentar.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(VistaJugadoresActualizar.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "No se pudo actualizar el jugador (" + nombre + ") vuelve a intentar.", "Canchas Gonzalez", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+            
+            
+            
+            
            //label.setText("You selected: Yes");
         }else if (result == JOptionPane.NO_OPTION){
             System.out.println(2);

@@ -294,11 +294,11 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="VISITANTE"/>
+        <Property name="text" type="java.lang.String" value="EQUIPO VISITANTE"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="720" y="60" width="130" height="40"/>
+          <AbsoluteConstraints x="570" y="60" width="280" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -354,11 +354,11 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="LOCAL"/>
+        <Property name="text" type="java.lang.String" value="EQUIPO LOCAL"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="760" y="10" width="90" height="40"/>
+          <AbsoluteConstraints x="610" y="10" width="240" height="40"/>
         </Constraint>
       </Constraints>
     </Component>

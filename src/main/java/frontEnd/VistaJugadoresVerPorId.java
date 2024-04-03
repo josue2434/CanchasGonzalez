@@ -3,7 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package frontEnd;
+import backEnd.Jugador;
+import backEnd.JugadorDAO;
 import backEnd.Utilidades;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -12,13 +17,51 @@ import javax.swing.JOptionPane;
  * @author josue
  */
 public class VistaJugadoresVerPorId extends javax.swing.JFrame {
+     private int idJugador;
 
+    public int getIdJugador() {
+        return idJugador;
+    }
+
+    public void setIdJugador(int idJugador) {
+        this.idJugador = idJugador;
+    }
     /**
      * Creates new form VistaPlantilla
      */
     public VistaJugadoresVerPorId() {
         initComponents();
         Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
+    }
+    
+    
+       public VistaJugadoresVerPorId(int idJugador) {
+           initComponents();
+        
+        Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
+        
+        
+        this.setIdJugador(idJugador);
+        try {
+            JugadorDAO jugadorDAO = new JugadorDAO();
+            
+            Jugador jugador1 = jugadorDAO.obtenerJugador(idJugador);
+            
+            txtfIdJugador.setText(String.valueOf(jugador1.getIdJugador()));
+            txtfNombres.setText(jugador1.getNombre());
+            txtfApellidoPaterno.setText(jugador1.getApellidoPaterno());
+            txtfApellidoMaterno.setText(jugador1.getApellidoMaterno());
+            txtfNumeroCamiseta.setText(String.valueOf(jugador1.getNumeroCamiseta()));
+            txtfPosicion.setText(jugador1.getPosicion());
+            txtfPosicion.setText(jugador1.getPosicion());
+            txtfFechaNacimiento.setText(jugador1.getFechaNacimiento());
+            txtfIdEquipo.setText(String.valueOf(jugador1.getIdEquipo()));
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(VistaJugadoresVerPorId.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     /**

@@ -482,9 +482,9 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         lblIdEquipoVisitante.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblIdEquipoVisitante.setForeground(new java.awt.Color(255, 255, 255));
         lblIdEquipoVisitante.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblIdEquipoVisitante.setText("VISITANTE");
+        lblIdEquipoVisitante.setText("EQUIPO VISITANTE");
         getContentPane().add(lblIdEquipoVisitante);
-        lblIdEquipoVisitante.setBounds(720, 60, 130, 40);
+        lblIdEquipoVisitante.setBounds(570, 60, 280, 40);
 
         txtfIdEquipoVisitante.setEditable(false);
         txtfIdEquipoVisitante.setBackground(new java.awt.Color(255, 255, 255));
@@ -506,9 +506,9 @@ public class VistaReservarCancha extends javax.swing.JFrame {
         lblIdEquipoLocal.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblIdEquipoLocal.setForeground(new java.awt.Color(255, 255, 255));
         lblIdEquipoLocal.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblIdEquipoLocal.setText("LOCAL");
+        lblIdEquipoLocal.setText("EQUIPO LOCAL");
         getContentPane().add(lblIdEquipoLocal);
-        lblIdEquipoLocal.setBounds(760, 10, 90, 40);
+        lblIdEquipoLocal.setBounds(610, 10, 240, 40);
 
         txtfIdEquipoLocal.setEditable(false);
         txtfIdEquipoLocal.setBackground(new java.awt.Color(255, 255, 255));
