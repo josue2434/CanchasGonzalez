@@ -40,6 +40,7 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
         initComponents();
         Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
         
+        
         this.idArbitro = idArbitro;
         
         ArbitroDAO arbitroDAO = new ArbitroDAO();
@@ -51,6 +52,12 @@ public class VistaArbitrosActualizar extends javax.swing.JFrame {
         txtfApellidoMaterno.setText(arbitro.getApellidoMaterno());
         txtfTelefono.setText(arbitro.getTelefono());
         cmbDisponible.setSelectedIndex(arbitro.isDisponible());
+        
+        Utilidades.limitarCaracteres(txtfNombres, 25, "letras");// Solo letras de la A a la Z y espacios
+        Utilidades.limitarCaracteres(txtfApellidoPaterno, 25, "letras");
+        Utilidades.limitarCaracteres(txtfApellidoMaterno, 25, "letras");
+        Utilidades.limitarCaracteres(txtfTelefono, 10, "numeros"); // Solo números
+        
     }
 
     /**

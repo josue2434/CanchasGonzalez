@@ -54,7 +54,8 @@ public class VistaEquiposActualizar extends javax.swing.JFrame {
             Logger.getLogger(VistaEquiposActualizar.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
+        Utilidades.limitarCaracteres(txtfNombre, 25, "letras");// Solo letras de la A a la Z y espacios
+        Utilidades.limitarCaracteres(txtfTelefono, 10, "numeros"); // Solo números
         
     }
 

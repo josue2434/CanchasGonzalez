@@ -26,6 +26,10 @@ public class VistaEquiposCrear extends javax.swing.JFrame {
     public VistaEquiposCrear() {
         initComponents();
         Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
+        
+        Utilidades.limitarCaracteres(txtfNombre, 25, "letras");// Solo letras de la A a la Z y espacios
+        Utilidades.limitarCaracteres(txtfTelefono, 10, "numeros"); // Solo números
+        
     }
 
     /**

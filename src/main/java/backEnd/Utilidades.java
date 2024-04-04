@@ -1,10 +1,12 @@
 package backEnd;
 
 import javax.swing.*;
+import javax.swing.text.*;
 import java.awt.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.time.format.DateTimeFormatter;
 
 public class Utilidades {
@@ -49,4 +51,57 @@ public class Utilidades {
         
         return fechaFormateada;
     }
+    
+    public static void limitarCaracteres(JTextField textField, int limite, String tipo) {
+        ((AbstractDocument) textField.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
+                if (validarCadena(fb.getDocument().getText(0, fb.getDocument().getLength()) + string, tipo, limite)) {
+                    super.insertString(fb, offset, string, attr);
+                } else {
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+                if (validarCadena(fb.getDocument().getText(0, fb.getDocument().getLength()) + text, tipo, limite)) {
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+    }
+
+    private static boolean validarCadena(String cadena, String tipo, int limite) {
+        if (tipo.equals("letras")) {
+            return cadena.matches("[a-zA-Z ]*") && cadena.length() <= limite;
+        } else if (tipo.equals("numeros")) {
+            return cadena.matches("\\d*") && cadena.length() <= limite;
+        } else if (tipo.equals("fecha")) {
+            // Permitir entrada de texto mientras se ingresa una fecha válida parcialmente
+            if (cadena.length() > 10) {
+                return false;
+            }
+
+            try {
+                if (cadena.length() >= 5) { // Año completo ingresado
+                    Integer.parseInt(cadena.substring(0, 4));
+                }
+                if (cadena.length() >= 8) { // Mes completo ingresado
+                    Integer.parseInt(cadena.substring(5, 7));
+                }
+                if (cadena.length() == 10) { // Día completo ingresado
+                    LocalDate.parse(cadena);
+                }
+                return true;
+            } catch (DateTimeParseException | NumberFormatException e) {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+    
 }

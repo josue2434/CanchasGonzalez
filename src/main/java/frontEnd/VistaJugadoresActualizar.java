@@ -64,6 +64,13 @@ public class VistaJugadoresActualizar extends javax.swing.JFrame {
             Logger.getLogger(VistaJugadoresActualizar.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        Utilidades.limitarCaracteres(txtfNombres, 25, "letras");// Solo letras de la A a la Z y espacios
+        Utilidades.limitarCaracteres(txtfApellidoPaterno, 25, "letras");
+        Utilidades.limitarCaracteres(txtfApellidoMaterno, 25, "letras");
+        Utilidades.limitarCaracteres(txtfNumeroCamiseta, 4, "numeros");
+        Utilidades.limitarCaracteres(txtfPosicion, 9, "letras");
+        Utilidades.limitarCaracteres(txtfFechaNacimiento, 10, "fecha");
+        
     }
     
 

@@ -21,6 +21,11 @@ public class VistaArbitrosCrear extends javax.swing.JFrame {
     public VistaArbitrosCrear() {
         initComponents();
         Utilidades.cargarLogo(this, "LOGOEMPRESA.png");
+        
+        Utilidades.limitarCaracteres(txtfNombres, 25, "letras");// Solo letras de la A a la Z y espacios
+        Utilidades.limitarCaracteres(txtfApellidoPaterno, 25, "letras");
+        Utilidades.limitarCaracteres(txtfApellidoMaterno, 25, "letras");
+        Utilidades.limitarCaracteres(txtfTelefono, 10, "numeros"); // Solo números
     }
 
     /**
