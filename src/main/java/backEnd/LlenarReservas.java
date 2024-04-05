@@ -18,14 +18,18 @@ public class LlenarReservas {
     public static void main(String[] args) {
        
         Arbitro arbitro1 = new Arbitro("N/A", "N/A", "N/A", "0", 1);
-        Arbitro arbitro2 = new Arbitro("Juan", "Perez", "Gomez", "333021212", 1);
-        Arbitro arbitro3 = new Arbitro("Miguel", "Perez", "Gomez", "333021212", 1);
+        Arbitro arbitro2 = new Arbitro("Juan", "Perez", "Gomez", "3330212172", 1);
+        Arbitro arbitro3 = new Arbitro("Miguel", "Perez", "Gomez", "3330212812", 1);
+        Arbitro arbitro4 = new Arbitro("Elena", "Martinez", "Garcia", "3367890126", 1);
+        Arbitro arbitro5 = new Arbitro("Carlos", "Fernandez", "Lopez", "3345678904", 1);
+        Arbitro arbitro6 = new Arbitro("Javier", "Lopez", "Sanchez", "3334567892", 1);
         
         Equipo equipo1 = new Equipo("N/A", "0");
-        Equipo equipo2 = new Equipo("Equipo1", "3322548521");
-        Equipo equipo3 = new Equipo("Equipo2", "3322548521");
-        Equipo equipo4 = new Equipo("Equipo3", "3322548521");
-        Equipo equipo5 = new Equipo("Equipo4", "3322548521");
+        Equipo equipo2 = new Equipo("LEONES NEGROS", "3330619846");
+        Equipo equipo3 = new Equipo("Real Madrid", "3351234567");
+        Equipo equipo4 = new Equipo("Manchester United", "3359876543");
+        Equipo equipo5 = new Equipo("FC Barcelona", "3352345678");
+        Equipo equipo6= new Equipo("Bayern Munich", "3352345647");
 
         Jugador jugador1 = new Jugador(1, "PEDRO","LOPEZ", "GOMEZ", 51, "PORTERO", "2000-12-03");
         Jugador jugador2 = new Jugador(2, "JUAN","AGUIRRE", "CAMACHO", 18, "DEFENSA", "2000-12-03");
@@ -52,12 +56,16 @@ public class LlenarReservas {
             arbitroDAO.agregarArbitro(arbitro1);
             arbitroDAO.agregarArbitro(arbitro2);
             arbitroDAO.agregarArbitro(arbitro3);
+            arbitroDAO.agregarArbitro(arbitro4);
+            arbitroDAO.agregarArbitro(arbitro5);
+            arbitroDAO.agregarArbitro(arbitro6);
             
             equipoDAO.insertarEquipo(equipo1);
             equipoDAO.insertarEquipo(equipo2);
             equipoDAO.insertarEquipo(equipo3);
             equipoDAO.insertarEquipo(equipo4);
             equipoDAO.insertarEquipo(equipo5);
+            equipoDAO.insertarEquipo(equipo6);
             
             jugadorDAO.insertarJugador(jugador1);
             jugadorDAO.insertarJugador(jugador2);
